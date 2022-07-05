@@ -16,11 +16,13 @@ use App\Http\Controllers\RegisterController;
 |
 */
 
-Route::get('/', [DashboardController::class, "index"]);
+Route::get('/', [DashboardController::class, "index"])->middleware('auth');
 Route::get('/attendances', [DashboardController::class, "attendances"]);
+Route::post('/attend', [DashboardController::class, "store"]);
 
-Route::get('/login', [LoginController::class, "index"]);
+Route::get('/login', [LoginController::class, "index"])->middleware('guest');
 Route::post('/login', [LoginController::class, "authenticate"]);
+Route::post('/logout', [LoginController::class, "logout"]);
 
-Route::get('/register', [RegisterController::class, "index"]);
+Route::get('/register', [RegisterController::class, "index"])->middleware('guest');
 Route::post('/register', [RegisterController::class, "store"]);

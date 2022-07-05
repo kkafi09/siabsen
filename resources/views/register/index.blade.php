@@ -18,6 +18,20 @@
                     @enderror
                 </div>
                 <div class="form-floating mb-3">
+                    <select class="form-select @error('kelas') is-invalid @enderror" name="kelas">
+                        <option disabled selected>Kelas</option>
+                        <option value="X RPL 6">X RPL 6</option>
+                        <option value="X RPL 7">X RPL 7</option>
+                        <option value="X RPL 8">X RPL 8</option>
+                    </select>
+                    <label for="id">Kelas</label>
+                    @error('kelas')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="form-floating mb-3">
                     <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="example@gmail.com" value="{{ old('email')  }}">
                     <label for="name">Email</label>
                     @error('email')
