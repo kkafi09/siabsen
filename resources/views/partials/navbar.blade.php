@@ -11,7 +11,7 @@
                 <span class="btn btn-secondary">2021/2022</span>
             </li>
             <li>
-                <span class="btn btn-secondary">{{ auth()->user()->name }}</span>
+                <span class="btn btn-secondary">{{ auth()->user()->kelas }}</span>
             </li>
         @endauth
       </ul>

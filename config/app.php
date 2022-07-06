@@ -69,8 +69,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
-
+    // 'timezone' => 'UTC',
+    'timezone' => env('APP_TIMEZONE', 'UTC'),
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
@@ -83,7 +83,7 @@ return [
     */
 
     'locale' => 'en',
-
+    // 'locale' => 'id',
     /*
     |--------------------------------------------------------------------------
     | Application Fallback Locale

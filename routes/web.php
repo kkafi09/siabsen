@@ -20,7 +20,7 @@ Route::get('/', [DashboardController::class, "index"])->middleware('auth');
 Route::get('/attendances', [DashboardController::class, "attendances"]);
 Route::post('/attend', [DashboardController::class, "store"]);
 
-Route::get('/login', [LoginController::class, "index"])->middleware('guest');
+Route::get('/login', [LoginController::class, "index"])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, "authenticate"]);
 Route::post('/logout', [LoginController::class, "logout"]);
 
