@@ -22,7 +22,12 @@ class DashboardController extends Controller
         ]);
     }
 
-   
+    public function profile(){
+        return view('students.profil', [
+            'title' => "Profil",
+            'active' => "profil"
+        ]);
+    }
 
     public function attendances(Kehadiran $kehadiran){
         $search = $kehadiran->where('created_at', '=', Carbon::now())
