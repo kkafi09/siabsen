@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,19 +14,22 @@ class LoginController extends Controller
         ]);
     }
 
-    public function authenticate(Request $request){
+    public function authenticate(Request $request, User $user){
         $credentials = $request->validate([
             'email' => 'required|email:dns',
             'password' => 'required'
         ]);
 
-        if(Auth::attempt($credentials)){
+        if(auth()->attempt($credentials)){
             $request->session()->regenerate();
-
-            return redirect()->intended('/');
+            if(auth()->user()->role == "guru"){
+                return redirect()->route("dashboard-guru");
+            } else{
+                return redirect()->route("dashboard-siswa");
+            }
         }
 
-        return back()->with('error', "Login Failed");
+        return back()->with('error', "Email dan Password Salah");
 
     }
 

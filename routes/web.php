@@ -15,10 +15,8 @@ use App\Http\Controllers\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', [DashboardController::class, "index"])->middleware('auth');
-Route::get('/attendances', [DashboardController::class, "attendances"]);
 Route::post('/attend', [DashboardController::class, "store"]);
+Route::get('/', [DashboardController::class, "index"]);
 
 Route::get('/login', [LoginController::class, "index"])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, "authenticate"]);
@@ -26,3 +24,14 @@ Route::post('/logout', [LoginController::class, "logout"]);
 
 Route::get('/register', [RegisterController::class, "index"])->middleware('guest');
 Route::post('/register', [RegisterController::class, "store"]);
+
+Route::group(['middleware' => ['auth', 'checkrole:guru' ]], function() {
+    Route::get('/dashboard-guru', [DashboardController::class, "show"])->name('dashboard-guru');
+});
+
+Route::group(['middleware' => ['auth', 'checkrole:siswa']], function (){
+    Route::get('/', [DashboardController::class, "index"]);
+    Route::get('/attendances', [DashboardController::class, "attendances"])->name('dashboard-siswa');
+});
+
+
