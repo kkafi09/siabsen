@@ -24,24 +24,22 @@ Route::post('/logout', [LoginController::class, "logout"]);
 Route::get('/register', [RegisterController::class, "index"])->middleware('guest');
 Route::post('/register', [RegisterController::class, "store"]);
 
-Route::group(['middleware' => ['auth', 'checkrole:guru' ]], function() {
+Route::group(['middleware' => ['auth', 'checkrole:guru']], function () {
     Route::get('/dashboard-guru', [DashboardTeacherController::class, "index"])->name('dashboard-guru');
     Route::get('/profil-siswa', [DashboardTeacherController::class, "profile"]);
     Route::get('/attendances', [DashboardTeacherController::class, "attendances"]);
     Route::post('/attend', [DashboardTeacherController::class, "store"]);
 });
 
-Route::group(['middleware' => ['auth', 'checkrole:siswa']], function (){
+Route::group(['middleware' => ['auth', 'checkrole:siswa']], function () {
     Route::get('/', [DashboardController::class, "index"])->name('dashboard-siswa');
     Route::get('/profil-siswa', [DashboardController::class, "profile"]);
     Route::get('/attendances', [DashboardController::class, "attendances"]);
     Route::post('/attend', [DashboardController::class, "store"]);
 });
 
-Route::group(['middleware' => ['auth', 'checkrole:admin']], function(){
-    Route::get('/', [DashboardAdminController::class, "index"])->name('dashboard-admin');
-    Route::get('/edit-siswa', [DashboardAdminController::class, "editStudents"]);
-    Route::get('/edit-guru', [DashboardAdminController::class, "editTeachers"]);
-});
-
-
+// Route::group(['middleware' => ['auth', 'checkrole:admin']], function(){
+//     Route::get('/', [DashboardAdminController::class, "index"])->name('dashboard-admin');
+//     Route::get('/edit-siswa', [DashboardAdminController::class, "editStudents"]);
+//     Route::get('/edit-guru', [DashboardAdminController::class, "editTeachers"]);
+// });
