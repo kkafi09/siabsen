@@ -15,19 +15,14 @@ class DashboardController extends Controller
 
         // $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->take(100);
 
-        return view('students.dashboard.index',[
+        return view('students.index',[
             'title' => "Dashboard",
             'active' => "dashboard",
             'kehadiran' => $hariIni->get(),
         ]);
     }
 
-    public function show(){
-        return view('teachers.dashboard.index', [
-            'title' => "Dashboard",
-            'active' => "dashboard"
-        ]);
-    }
+   
 
     public function attendances(Kehadiran $kehadiran){
         $search = $kehadiran->where('created_at', '=', Carbon::now())

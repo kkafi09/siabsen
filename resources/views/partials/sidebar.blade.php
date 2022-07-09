@@ -18,10 +18,15 @@
         </ul>
     </div>
     <hr>
+    @if(Auth::user()->role === 'siswa')
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
         <a href="/" class="nav-link {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
+        </a>
+      </li>
+        <a href="/profile-student" class="nav-link {{ $active === "profil-siswa" ? "active" : "" }}" >
+          Profil Siswa
         </a>
       </li>
       <li>
@@ -30,5 +35,42 @@
         </a>
       </li>
     </ul>
+    @endif
+    @if(Auth::user()->role === 'guru')
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/" class="nav-link {{ $active === "dashboard" ? "active" : "" }}" >
+          Dashboard
+        </a>
+      </li>
+        <a href="/profile-teacher" class="nav-link {{ $active === "profil-siswa" ? "active" : "" }}" >
+          Profil Guru
+        </a>
+      </li>
+      <li>
+        <a href="/attendances" class="nav-link link-dark  {{ $active === "attendances" ? "active" : "" }}">
+          Kehadiran hari ini
+        </a>
+      </li>
+    </ul>
+    @endif
+    @if(Auth::user()->role === 'admin')
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="/" class="nav-link {{ $active === "dashboard" ? "active" : "" }}" >
+          Dashboard
+        </a>
+      </li>
+        <a href="/edit-students" class="nav-link {{ $active === "profil-siswa" ? "active" : "" }}" >
+          Edit Students
+        </a>
+      </li>
+      <li>
+        <a href="/edit-teachers" class="nav-link link-dark  {{ $active === "attendances" ? "active" : "" }}">
+          Edit Teachers
+        </a>
+      </li>
+    </ul>
+    @endif
     @endauth
 </div>

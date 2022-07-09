@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DashboardTeacherController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -15,8 +16,6 @@ use App\Http\Controllers\RegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::post('/attend', [DashboardController::class, "store"]);
-Route::get('/', [DashboardController::class, "index"]);
 
 Route::get('/login', [LoginController::class, "index"])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, "authenticate"]);
@@ -26,12 +25,23 @@ Route::get('/register', [RegisterController::class, "index"])->middleware('guest
 Route::post('/register', [RegisterController::class, "store"]);
 
 Route::group(['middleware' => ['auth', 'checkrole:guru' ]], function() {
-    Route::get('/dashboard-guru', [DashboardController::class, "show"])->name('dashboard-guru');
+    Route::get('/dashboard-guru', [DashboardTeacherController::class, "index"])->name('dashboard-guru');
+    Route::get('/profil-siswa', [DashboardTeacherController::class, "profile"]);
+    Route::get('/attendances', [DashboardTeacherController::class, "attendances"]);
+    Route::post('/attend', [DashboardTeacherController::class, "store"]);
 });
 
 Route::group(['middleware' => ['auth', 'checkrole:siswa']], function (){
-    Route::get('/', [DashboardController::class, "index"]);
-    Route::get('/attendances', [DashboardController::class, "attendances"])->name('dashboard-siswa');
+    Route::get('/', [DashboardController::class, "index"])->name('dashboard-siswa');
+    Route::get('/profil-siswa', [DashboardController::class, "profile"]);
+    Route::get('/attendances', [DashboardController::class, "attendances"]);
+    Route::post('/attend', [DashboardController::class, "store"]);
+});
+
+Route::group(['middleware' => ['auth', 'checkrole:admin']], function(){
+    Route::get('/', [DashboardAdminController::class, "index"])->name('dashboard-admin');
+    Route::get('/edit-siswa', [DashboardAdminController::class, "editStudents"]);
+    Route::get('/edit-guru', [DashboardAdminController::class, "editTeachers"]);
 });
 
 
