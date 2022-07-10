@@ -6,7 +6,7 @@
             <strong>{{ auth()->user()->name }}</strong>
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-            <li><a class="dropdown-item" href="#">Profil</a></li>
+            <li><a class="dropdown-item" href="/profil-{{ Auth::user()->role }}">Profil</a></li>
             <li><a class="dropdown-item" href="#">Ubah Password</a></li>
             <li><hr class="dropdown-divider"></li>
             <li>
@@ -21,16 +21,16 @@
     @if(Auth::user()->role === 'siswa')
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link {{ $active === "dashboard" ? "active" : "" }}" >
+        <a href="/" class="nav-link link-dark {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/profile-student" class="nav-link {{ $active === "profil-siswa" ? "active" : "" }}" >
+        <a href="/profil-siswa" class="nav-link link-dark {{ $active === "profil-siswa" ? "active" : "" }}" >
           Profil Siswa
         </a>
       </li>
       <li>
-        <a href="/attendances" class="nav-link link-dark  {{ $active === "attendances" ? "active" : "" }}">
+        <a href="/kehadiran-siswa" class="nav-link link-dark  {{ $active === "kehadiran-siswa" ? "active" : "" }}">
           Kehadiran hari ini
         </a>
       </li>
@@ -39,16 +39,16 @@
     @if(Auth::user()->role === 'guru')
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link {{ $active === "dashboard" ? "active" : "" }}" >
+        <a href="/" class="nav-link link-dark {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/profile-teacher" class="nav-link {{ $active === "profil-siswa" ? "active" : "" }}" >
+        <a href="/profil-guru" class="nav-link link-dark{{ $active === "profil-guru" ? "active" : "" }}" >
           Profil Guru
         </a>
       </li>
       <li>
-        <a href="/attendances" class="nav-link link-dark  {{ $active === "attendances" ? "active" : "" }}">
+        <a href="/kehadiran-guru" class="nav-link link-dark  {{ $active === "kehadiran-guru" ? "active" : "" }}">
           Kehadiran hari ini
         </a>
       </li>
@@ -57,16 +57,16 @@
     @if(Auth::user()->role === 'admin')
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link {{ $active === "dashboard" ? "active" : "" }}" >
+        <a href="/" class="nav-link link-dark {{ $active === "dashboard-admin" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/edit-students" class="nav-link {{ $active === "profil-siswa" ? "active" : "" }}" >
+        <a href="/edit-siswa" class="nav-link link-dark {{ $active === "edit-siswa" ? "active" : "" }}" >
           Edit Students
         </a>
       </li>
       <li>
-        <a href="/edit-teachers" class="nav-link link-dark  {{ $active === "attendances" ? "active" : "" }}">
+        <a href="/edit-guru" class="nav-link link-dark  {{ $active === "edit-guru" ? "active" : "" }}">
           Edit Teachers
         </a>
       </li>

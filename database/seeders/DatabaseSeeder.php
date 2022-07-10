@@ -23,7 +23,6 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-
         Kehadiran::factory("10")->create();
 
         User::create([
@@ -36,18 +35,18 @@ class DatabaseSeeder extends Seeder
 
 
         User::create([
-            'name' => "M. Chusni Agus",
+            'name' => "Guru SIAKAD",
             'role' => "guru",
             'kelas' => "Guru X RPL 1",
-            'email' => "chusni_agus@gmail.com",
-            'password' => bcrypt("12345678")
+            'email' => "guru@gmail.com",
+            'password' => bcrypt("guru123")
         ]);
 
         User::create([
-            'name' => "M. Kafanal Kafi",
+            'name' => "Siswa SIAKAD",
             'kelas' => "X RPL 6",
-            'email' => "kafanal_kafi@gmail.com",
-            'password' => bcrypt("12345678")
+            'email' => "siswa@gmail.com",
+            'password' => bcrypt("siswa123")
         ]);
 
     }

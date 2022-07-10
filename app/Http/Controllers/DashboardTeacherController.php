@@ -18,16 +18,16 @@ class DashboardTeacherController extends Controller
     public function profile(){
         return view('teachers.profil', [
             'title' => "Profil",
-            'active' => "profil"
+            'active' => "profil-guru"
         ]);
     }
 
     public function attendances(Kehadiran $kehadiran){
         $search = $kehadiran->where('created_at', '=', Carbon::now())
                             ->where('id', '=', auth()->user()->id);
-        return view('students.dashboard.attendances', [
+        return view('students.attendances', [
             'title' => "Attendances",
-            'active' => "attendances",
+            'active' => "kehadiran-guru",
             'search' => $search->get()
         ]);
     }

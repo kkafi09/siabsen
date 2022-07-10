@@ -12,7 +12,7 @@
     <form action="/attend" method="post">
         @csrf
         <select class="form-select" name="attendance">
-            <option selected>Kehadiran anda..</option>
+            <option selected disabled>Kehadiran anda..</option>
             <option value="hadir">Hadir</option>
             <option value="izin">Izin</option>
         </select>

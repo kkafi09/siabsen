@@ -21,11 +21,11 @@ class CheckRole
 
         foreach ($roles as $role) {
             $user = Auth::user()->role;
-            if( $user == $role){
+            if( Auth::check() && $user == $role){
                 return $next($request);
             }
         }
+        return redirect()->route('dashboard.'. Auth::user()->role);
 
-        return redirect('login')->with('error', "Username password salah");
     }
 }

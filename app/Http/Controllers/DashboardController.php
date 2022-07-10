@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class DashboardController extends Controller
 {
     public function index(Kehadiran $kehadiran){
-        $hariIni = $kehadiran::whereDate('created_at', Carbon::today())
+        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())
                 ->whereTime('created_at', '>', '06:00:00')
                 ->whereTime('created_at', '<', '09:00:00')->take(100);
 
@@ -18,23 +18,23 @@ class DashboardController extends Controller
         return view('students.index',[
             'title' => "Dashboard",
             'active' => "dashboard",
-            'kehadiran' => $hariIni->get(),
+            'kehadiran' => $kehadiranHariIni->get(),
         ]);
     }
 
     public function profile(){
         return view('students.profil', [
             'title' => "Profil",
-            'active' => "profil"
+            'active' => "profil-siswa"
         ]);
     }
 
     public function attendances(Kehadiran $kehadiran){
         $search = $kehadiran->where('created_at', '=', Carbon::now())
                             ->where('id', '=', auth()->user()->id);
-        return view('students.dashboard.attendances', [
+        return view('students.attendances', [
             'title' => "Attendances",
-            'active' => "attendances",
+            'active' => "kehadiran-siswa",
             'search' => $search->get()
         ]);
     }
