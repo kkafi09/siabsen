@@ -17,12 +17,12 @@
   <body>
     @include('partials.navbar')
 
-    <div class="container-full">
-        <div class="row">
-            <div class="col-md-2 sidebar">
+    <div class="container-screen">
+        <div class="flex">
+            <div class=" sidebar">
                 @include('partials.sidebar')
             </div>
-            <div class="col-md-10">
+            <div class=" contents">
                 @yield('container')
             </div>
         </div>

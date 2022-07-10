@@ -8,40 +8,44 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index(Kehadiran $kehadiran){
-        $hariIni = $kehadiran::whereDate('created_at', Carbon::today())
-                ->whereTime('created_at', '>', '06:00:00')
-                ->whereTime('created_at', '<', '09:00:00')->take(100);
+    public function index(Kehadiran $kehadiran)
+    {
+        // // $hariIni = $kehadiran::whereDate('created_at', Carbon::today())
+        //     ->whereTime('created_at', '>', '06:00:00')
+        //     ->whereTime('created_at', '<', '09:00:00')->take(100);
 
-        // $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->take(100);
+        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->take(100);
 
-        return view('students.index',[
+        return view('students.index', [
             'title' => "Dashboard",
             'active' => "dashboard",
-            'kehadiran' => $hariIni->get(),
+            'kehadiran' => $kehadiranHariIni->get(),
         ]);
     }
 
-    public function profile(){
+    public function profile()
+    {
         return view('students.profil', [
             'title' => "Profil",
             'active' => "profil"
         ]);
     }
 
-    public function attendances(Kehadiran $kehadiran){
+    public function attendances(Kehadiran $kehadiran)
+    {
         $search = $kehadiran->where('created_at', '=', Carbon::now())
-                            ->where('id', '=', auth()->user()->id);
-        return view('students.dashboard.attendances', [
+            ->where('id', '=', auth()->user()->id);
+        return view('students.attendances', [
             'title' => "Attendances",
             'active' => "attendances",
             'search' => $search->get()
         ]);
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $storedData = $request->validate([
-            'attendance'=>'required',
+            'attendance' => 'required',
         ]);
 
         $storedData['name'] = auth()->user()->name;
@@ -51,5 +55,4 @@ class DashboardController extends Controller
 
         return redirect('/attendances')->with('success', "Berhasil absen");
     }
-
 }
