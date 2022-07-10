@@ -7,7 +7,7 @@
         </a>
         <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
             <li><a class="dropdown-item" href="/profil-{{ Auth::user()->role }}">Profil</a></li>
-            <li><a class="dropdown-item" href="#">Ubah Password</a></li>
+            <li><a class="dropdown-item" href="/change-password">Ubah Password</a></li>
             <li><hr class="dropdown-divider"></li>
             <li>
                 <form action="/logout" method="post">

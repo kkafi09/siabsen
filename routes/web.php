@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardTeacherController;
@@ -24,6 +25,9 @@ Route::post('/logout', [LoginController::class, "logout"]);
 
 Route::get('/register', [RegisterController::class, "index"])->middleware('guest');
 Route::post('/register', [RegisterController::class, "store"]);
+
+Route::get('/change-password', [ChangePasswordController::class, "index"])->middleware('auth');
+Route::post('/change-password', [ChangePasswordController::class, "update"]);
 
 Route::group(['middleware' => ['auth', 'checkrole:guru' ]], function() {
     Route::get('/dashboard-guru', [DashboardTeacherController::class, "index"])->name('dashboard.guru');

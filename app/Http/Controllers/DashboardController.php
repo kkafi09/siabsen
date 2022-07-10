@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kehadiran;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -23,9 +24,12 @@ class DashboardController extends Controller
     }
 
     public function profile(){
+        $profil_siswa = User::where('id', auth()->user()->id)->first();
+
         return view('students.profil', [
             'title' => "Profil",
-            'active' => "profil-siswa"
+            'active' => "profil-siswa",
+            'profile' => $profil_siswa
         ]);
     }
 
