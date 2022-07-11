@@ -36,7 +36,7 @@ Route::group(['middleware' => ['auth', 'checkrole:guru' ]], function() {
     Route::post('/attend', [DashboardTeacherController::class, "store"]);
 });
 
-Route::group(['middleware' => ['auth', 'checkrole:siswa']], function (){
+Route::group(['middleware' => ['auth', 'checkrole:siswa']], function () {
     Route::get('/', [DashboardController::class, "index"])->name('dashboard.siswa');
     Route::get('/profil-siswa', [DashboardController::class, "profile"]);
     Route::get('/kehadiran-siswa', [DashboardController::class, "attendances"]);

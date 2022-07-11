@@ -46,6 +46,6 @@ class DashboardTeacherController extends Controller
 
         Kehadiran::create($storedData);
 
-        return redirect('/attendances')->with('success', "Berhasil absen");
+        return redirect('/kehadiran-guru')->with('success', "Berhasil absen");
     }
 }
