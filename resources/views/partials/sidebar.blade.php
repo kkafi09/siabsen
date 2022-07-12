@@ -1,11 +1,11 @@
-<div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px; height:100vh">
+<div class="d-flex flex-column flex-shrink-0  bg-gray-700 text-white h-screen" style="width: 280px; ">
     @auth
-    <div class="dropdown ">
+    <div class="dropdown bg-gray-600 px-3 py-3 w-full">
         <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>{{ auth()->user()->name }}</strong>
+            <img src="https://github.com/mdo.png" alt="" width="64" height="64" class="rounded-circle me-2">
+            <strong class="text-white">{{ auth()->user()->name }}</strong>
         </a>
-        <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+        <ul class="dropdown-menu  text-white shadow" aria-labelledby="dropdownUser2 ">
             <li><a class="dropdown-item" href="/profil-{{ Auth::user()->role }}">Profil</a></li>
             <li><a class="dropdown-item" href="/change-password">Ubah Password</a></li>
             <li><hr class="dropdown-divider"></li>
@@ -19,18 +19,18 @@
     </div>
     <hr>
     @if(Auth::user()->role === 'siswa')
-    <ul class="nav nav-pills flex-column mb-auto">
+    <ul class="nav nav-pills flex-column mb-auto my-5">
       <li class="nav-item">
-        <a href="/" class="nav-link link-dark {{ $active === "dashboard" ? "active" : "" }}" >
+        <a href="/" class="nav-link mt-2 text-white  {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/profil-siswa" class="nav-link link-dark {{ $active === "profil-siswa" ? "active" : "" }}" >
+        <a href="/profil-siswa" class="nav-link mt-2 text-white  {{ $active === "profil-siswa" ? "active" : "" }}" >
           Profil Siswa
         </a>
       </li>
       <li>
-        <a href="/kehadiran-siswa" class="nav-link link-dark  {{ $active === "kehadiran-siswa" ? "active" : "" }}">
+        <a href="/kehadiran-siswa" class="nav-link mt-2 text-white   {{ $active === "kehadiran-siswa" ? "active" : "" }}">
           Kehadiran hari ini
         </a>
       </li>

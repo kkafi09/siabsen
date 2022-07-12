@@ -1,8 +1,8 @@
 @extends('layouts.auth')
 
 @section('container')
-<div class="container col-xl-10 px-4 py-5">
-    <div class="row align-items-center g-lg-5 py-5">
+<div class="container content-center  ">
+    <div class="row grid justify-items-center g-lg-5 py-5">
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success')  }}
@@ -15,12 +15,15 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <div class="col-lg-7 text-center text-lg-start">
-            <h1 class="display-4 fw-bold lh-1 mb-3">Login Siakad</h1>
-            <p class="col-lg-10 fs-4">by <a target="_blank" href="">Kafanal Kafi</a></p>
-        </div>
-        <div class="col-md-10 mx-auto col-lg-5">
-            <form class="p-4 p-md-5 border rounded-3 bg-light" method="post" action="/login">
+        <div class="py-5 grid justify-items-center bg-white  w-1/3">
+            <div class="col-lg-7 text-center w-full ">
+                <h1 class="display-4 text-3xl font-semibold text-gray-500">Si<span class="text-red-700 uppercase font-bold">absen</span></h1>
+                <div class="creditsname text-xs">
+                    <p class="">Backend by <a target="_blank" href="">Kafanal Kafi</a></p>
+                    <p class="">Frontend by <a target="_blank" href="">Atharafi Affandy</a></p>
+                </div>
+            </div>
+            <form class="px-4 py-5 w-full" method="post" action="/login">
                 @csrf
                 <div class="form-floating mb-3">
                     <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" autofocus value="{{ old('email') }}">
@@ -40,7 +43,7 @@
                         {{ $message }}
                     </div>
                 @enderror
-                <button class="w-100 btn btn-md btn-primary" type="submit">Sign in</button>
+                <button class="w-100 btn bg-red-700 text-white" type="submit">Sign in</button>
             </form>
             <small class="d-block text-center mt-3">
                 Not registered? <a href="/register">Sign up</a>

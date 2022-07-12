@@ -17,7 +17,7 @@
   </head>
   <body>
 
-    <div class="container mt-2">
+    <div class="container w-screen h-screen content-center grid bg-stone-200">
         @yield('container')
     </div>
     <!-- Optional JavaScript; choose one of the two! -->
