@@ -19,7 +19,7 @@
     </div>
     <hr>
     @if(Auth::user()->role === 'siswa')
-    <ul class="nav nav-pills flex-column mb-auto my-5">
+    <ul class="nav nav-pills flex-column mb-auto ">
       <li class="nav-item">
         <a href="/" class="nav-link mt-2 text-white  {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
