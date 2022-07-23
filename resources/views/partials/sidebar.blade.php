@@ -1,4 +1,4 @@
-<div class="d-flex flex-column flex-shrink-0  bg-gray-700 text-white h-screen" style="width: 280px; ">
+<div class="d-flex flex-column flex-shrink-0  bg-gray-700 text-white h-full" style="width: 280px; ">
     @auth
     <div class="dropdown bg-gray-600 px-3 py-3 w-full">
         <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
