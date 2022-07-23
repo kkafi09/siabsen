@@ -6,18 +6,21 @@ use App\Models\Kehadiran;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
     public function index(Kehadiran $kehadiran)
     {
-        //     $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())
-        //             ->whereTime('created_at', '>', '06:00:00')
-        //             ->whereTime('created_at', '<', '09:00:00')->take(100);
+        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())
+                ->whereTime('created_at', '>', '06:00:00')
+                ->whereTime('created_at', '<', '13:00:00')->take(100)
+                ->where('role', auth()->user()->role);
 
-        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->take(100);
 
-        return view('students.index', [
+        // $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->take(100);
+
+        return view('dashboard.index', [
             'title' => "Dashboard",
             'active' => "dashboard",
             'kehadiran' => $kehadiranHariIni->get(),
@@ -26,10 +29,12 @@ class DashboardController extends Controller
 
     public function profile()
     {
-        return view('students.profil', [
+        $profile = User::where('email', auth()->user()->email)->first();
+
+        return view('dashboard.profile', [
             'title' => "Profil",
             'active' => "profil-siswa",
-            // 'profile' => $profil_siswa
+            'profile' => $profile
         ]);
     }
 
@@ -37,7 +42,8 @@ class DashboardController extends Controller
     {
         $search = $kehadiran->where('created_at', '=', Carbon::now())
             ->where('id', '=', auth()->user()->id);
-        return view('students.attendances', [
+
+        return view('dashboard.attendances', [
             'title' => "Attendances",
             'active' => "kehadiran-siswa",
             'search' => $search->get()
@@ -52,9 +58,10 @@ class DashboardController extends Controller
 
         $storedData['name'] = auth()->user()->name;
         $storedData['kelas'] = auth()->user()->kelas;
+        $storedData['role'] = auth()->user()->role;
 
         Kehadiran::create($storedData);
 
-        return redirect('/kehadiran-siswa')->with('success', "Berhasil absen");
+        return redirect()->route('dashboard.attendances')->with('success', "Berhasil absen");
     }
 }

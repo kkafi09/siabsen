@@ -9,9 +9,9 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        @if (session()->has('loginError'))
+        @if (session()->has('error'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('loginError')  }}
+                {{ session('error')  }}
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
@@ -28,21 +28,22 @@
                 <div class="form-floating mb-3">
                     <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" id="email" placeholder="Email" autofocus value="{{ old('email') }}">
                     <label for="email">Email</label>
+                    @error('email')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                @error('email')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+
                 <div class="form-floating mb-3">
                     <input name="password" type="password" class="form-control @error('password') is-invalid @enderror" id="password" placeholder="password">
                     <label for="password">Password</label>
+                    @error('password')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
                 </div>
-                @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
                 <button class="w-100 btn bg-red-700 text-white" type="submit">Sign in</button>
             </form>
             <small class="d-block text-center mt-3">

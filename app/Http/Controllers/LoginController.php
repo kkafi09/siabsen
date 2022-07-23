@@ -21,17 +21,22 @@ class LoginController extends Controller
 
         if(auth()->attempt($credentials)){
             $request->session()->regenerate();
-            if(auth()->user()->role == "guru"){
-                return redirect()->route("dashboard-guru");
-            } else if(auth()->user()->role == "admin"){
+            if(auth()->user()->role == "admin"){
                 return redirect()->route("dashboard.admin");
             }else{
-                return redirect()->route("dashboard.siswa");
+                return redirect()->route("dashboard.index");
             }
         }
 
         return back()->with('error', "Email dan Password Salah");
 
+    }
+
+    public function update() {
+        return view("auth.resetPassword.index", [
+            'title' => "Reset Password",
+            'active' => "reset"
+        ]);
     }
 
     public function logout(Request $request){
