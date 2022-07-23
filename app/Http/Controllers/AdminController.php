@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class DashboardAdminController extends Controller
+class AdminController extends Controller
 {
     public function index(){
         return view('admin.index', [
@@ -15,7 +15,7 @@ class DashboardAdminController extends Controller
     }
 
     public function editStudents(){
-        $students = User::where('role', "siswa")->all();
+        $students = User::where('role', "siswa")->get();
 
         return view("admin.edit-students", [
             'title' => "Edit Students",
@@ -25,7 +25,7 @@ class DashboardAdminController extends Controller
     }
 
     public function editTeachers(){
-        $teachers = User::where('role', "guru")->all();
+        $teachers = User::where('role', "guru")->get();
 
         return view('admin.edit-teachers', [
             'title' => "Edit Teachers",

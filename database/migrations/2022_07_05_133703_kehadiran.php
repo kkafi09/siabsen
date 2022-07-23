@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('kelas');
+            $table->enum('role', ['admin', 'guru', 'siswa'])->default('siswa');
             $table->timestamps();
         });
     }

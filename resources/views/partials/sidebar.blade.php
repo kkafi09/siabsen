@@ -7,7 +7,7 @@
         </a>
         <ul class="dropdown-menu  text-white shadow" aria-labelledby="dropdownUser2 ">
             <li><a class="dropdown-item" href="/profil-{{ Auth::user()->role }}">Profil</a></li>
-            <li><a class="dropdown-item" href="/change-password">Ubah Password</a></li>
+            <li><a class="dropdown-item" href="{{ route('dashboard.reset') }}">Ubah Password</a></li>
             <li><hr class="dropdown-divider"></li>
             <li>
                 <form action="/logout" method="post">
@@ -21,16 +21,16 @@
     @if(Auth::user()->role === 'siswa')
     <ul class="nav nav-pills flex-column mb-auto my-5">
       <li class="nav-item">
-        <a href="/" class="nav-link mt-2 text-white  {{ $active === "dashboard" ? "active" : "" }}" >
+        <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-white  {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/profil-siswa" class="nav-link mt-2 text-white  {{ $active === "profil-siswa" ? "active" : "" }}" >
+        <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-white  {{ $active === "profil-siswa" ? "active" : "" }}" >
           Profil Siswa
         </a>
       </li>
       <li>
-        <a href="/kehadiran-siswa" class="nav-link mt-2 text-white   {{ $active === "kehadiran-siswa" ? "active" : "" }}">
+        <a href="{{route('dashboard.attendances')  }}" class="nav-link mt-2 text-white   {{ $active === "kehadiran-siswa" ? "active" : "" }}">
           Kehadiran hari ini
         </a>
       </li>
@@ -39,16 +39,16 @@
     @if(Auth::user()->role === 'guru')
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link link-dark {{ $active === "dashboard" ? "active" : "" }}" >
+        <a href="{{ route('dashboard.index') }}" class="nav-link link-dark {{ $active === "dashboard" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/profil-guru" class="nav-link link-dark{{ $active === "profil-guru" ? "active" : "" }}" >
+        <a href="{{route('dashboard.profile')  }}" class="nav-link link-dark{{ $active === "profil-guru" ? "active" : "" }}" >
           Profil Guru
         </a>
       </li>
       <li>
-        <a href="/kehadiran-guru" class="nav-link link-dark  {{ $active === "kehadiran-guru" ? "active" : "" }}">
+        <a href="{{route('dashboard.attendances')  }}" class="nav-link link-dark  {{ $active === "kehadiran-guru" ? "active" : "" }}">
           Kehadiran hari ini
         </a>
       </li>
@@ -57,16 +57,16 @@
     @if(Auth::user()->role === 'admin')
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="/" class="nav-link link-dark {{ $active === "dashboard-admin" ? "active" : "" }}" >
+        <a href="{{ route('dashboard.admin') }}" class="nav-link link-dark {{ $active === "dashboard-admin" ? "active" : "" }}" >
           Dashboard
         </a>
       </li>
-        <a href="/edit-siswa" class="nav-link link-dark {{ $active === "edit-siswa" ? "active" : "" }}" >
+        <a href=" {{ route('dashboard.edit.student') }}" class="nav-link link-dark {{ $active === "edit-siswa" ? "active" : "" }}" >
           Edit Students
         </a>
       </li>
       <li>
-        <a href="/edit-guru" class="nav-link link-dark  {{ $active === "edit-guru" ? "active" : "" }}">
+        <a href="{{ route('dashboard.edit.teacher') }}" class="nav-link link-dark  {{ $active === "edit-guru" ? "active" : "" }}">
           Edit Teachers
         </a>
       </li>

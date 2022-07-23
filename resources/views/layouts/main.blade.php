@@ -17,21 +17,12 @@
   <body>
     @include('partials.navbar')
 
-<<<<<<< HEAD
-    <div class="container-screen">
-        <div class="flex">
-            <div class=" sidebar">
-                @include('partials.sidebar')
-            </div>
-            <div class=" contents">
-=======
     <div class="container-full">
         <div class="flex">
             <div class="sidebar">
                 @include('partials.sidebar')
             </div>
             <div class="contents w-full h-screen">
->>>>>>> 4fd044f (optimizing UI)
                 @yield('container')
             </div>
         </div>
