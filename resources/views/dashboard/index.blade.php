@@ -22,7 +22,7 @@
             </p>
         </div>
     </div>
-    <div class="maincontent flex flex-row gap-x-4 my-4">
+    <div class="maincontent flex flex-col xl:flex-row gap-4 my-4">
         <div class="jamAbsen w-full">
             <div class="card-waktu text-black w-full flex flex-row p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
                 <div class="text w-2/3">

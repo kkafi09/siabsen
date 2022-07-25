@@ -1,7 +1,7 @@
-<div class=" flex-column transition-opacity hidden xl:flex flex-shrink-0 bg-gray-700 text-white h-full"
-  style="width: 280px; ">
+<div
+  class=" flex-column transition-transform ease-out  -translate-x-full absolute xl:translate-x-0 xl:static w-72 flex-shrink-0 bg-gray-700 text-white h-full">
   @auth
-  <div class="dropdown bg-gray-600 px-3 py-3 w-full">
+  <div class=" dropdown bg-gray-600 px-3 py-3 w-full">
     <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
       data-bs-toggle="dropdown" aria-expanded="false">
       <img src="https://github.com/mdo.png" alt="" width="64" height="64" class="rounded-circle me-2">

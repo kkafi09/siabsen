@@ -26,7 +26,7 @@
       <div class="sidebar">
         @include('partials.sidebar')
       </div>
-      <div class="contents w-full h-screen">
+      <div class="contents w-full h-screen transition-all ease-out">
         @yield('container')
       </div>
     </div>

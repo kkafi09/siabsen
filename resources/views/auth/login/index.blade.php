@@ -3,18 +3,18 @@
 @section('container')
 <div class="container content-center overflow-x-hidden  ">
     <div class="row grid justify-items-center g-lg-5 py-5">
-        {{-- @if (session()->has('success')) --}}
+        @if (session()->has('success'))
         <div class="alert alert-success w-2/3 alert-dismissible fade show" role="alert">
-            {{-- {{ session('success') }} --}}
+            {{ session('success') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        {{-- @endif
-        @if (session()->has('error')) --}}
+        @endif
+        @if (session()->has('error'))
         <div class="alert  w-2/3 alert-danger alert-dismissible fade show" role="alert">
-            {{-- {{ session('error') }} --}}
+            {{ session('error') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-        {{-- @endif --}}
+        @endif
         <div class="py-5 grid justify-items-center bg-white  w-1/3">
             <div class="col-lg-7 text-center w-full ">
                 <h1 class="display-4 text-3xl font-semibold text-gray-500">Si<span

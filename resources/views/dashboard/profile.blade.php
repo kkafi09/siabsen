@@ -6,7 +6,7 @@
         <h1 class="uppercase text-xl">Data profil: {{ $profile->name }}</h1>
         <p class="text-sm">Detail data saya sebagai siswa SMK Telkom Malang</p>
     </div>
-    <div class="isiData text-sm font-light w-full h-full p-4 bg-white my-3 grid grid-cols-4">
+    <div class="isiData text-sm font-light w-full h-full p-4 bg-white my-3 gap-x-4 flex flex-row">
         <div class="id">
             <p>1.</p>
             <p>2.</p>
@@ -36,7 +36,7 @@
             <p>23.</p>
             <p>24.</p>
         </div>
-        <div class="key">
+        <div class="key ">
             <p> PIN</p>
             <p> Nama Peserta Didik</p>
             <p> Kelas</p>
@@ -104,33 +104,6 @@
             <p>:</p>
         </div>
         <div class="value">
-            <p>1.</p>
-            <p>2.</p>
-            <p>3.</p>
-            <p>4.</p>
-            <p>5.</p>
-            <p>6.</p>
-            <p>7.</p>
-            <p>8.</p>
-            <p>9.</p>
-            <p>10.</p>
-            <p>11.</p>
-            <p>12.</p>
-            <br>
-            <p>13.</p>
-            <p>14.</p>
-            <br>
-            <p>15.</p>
-            <p>16.</p>
-            <p>17.</p>
-            <p>18.</p>
-            <br>
-            <p>19.</p>
-            <p>20.</p>
-            <p>21.</p>
-            <p>22.</p>
-            <p>23.</p>
-            <p>24.</p>
         </div>
     </div>
 </div>
