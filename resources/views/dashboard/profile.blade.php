@@ -1,12 +1,13 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="wrapper py-3 px-5 w-full h-fit bg-stone-100">
-    <div class="header-text text-stone-500">
-        <h1 class="uppercase text-xl">Data profil: {{ $profile->name }}</h1>
-        <p class="text-sm">Detail data saya sebagai siswa SMK Telkom Malang</p>
+<div class="wrapper py-3 px-5 w-full h-full bg-backgroundColour">
+    <div class="header-text text-black w-full bg-semiwhite p-3 rounded-lg">
+        <h1 class="uppercase font-semibold text-xl text-gray">Data profil: {{ $profile->name }}</h1>
+        <p class="text-xs text-gray opacity-80">Data diri yang tampil seharusnya harus sama dengan data yang ada di
+            raport</p>
     </div>
-    <div class="isiData text-sm font-light w-full h-full p-4 bg-white my-3 gap-x-4 flex flex-row">
+    <div class="isiData text-sm font-light w-full h-fit p-4 rounded-xl bg-semiwhite mt-3 gap-x-4 flex flex-row">
         <div class="id">
             <p>1.</p>
             <p>2.</p>
