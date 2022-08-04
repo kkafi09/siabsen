@@ -10,17 +10,10 @@
         </div>
         @endif
         @if (session()->has('error'))
-<<<<<<< HEAD
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('error')  }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-=======
         <div class="alert  w-2/3 alert-danger alert-dismissible fade show" role="alert">
             {{ session('error') }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
->>>>>>> 84d7f058281557fd851d3693cacb5c304fe49a22
         @endif
         <div class="py-5 grid justify-items-center bg-white  w-1/3">
             <div class="col-lg-7 text-center w-full ">
@@ -38,15 +31,9 @@
                         id="email" placeholder="Email" autofocus value="{{ old('email') }}">
                     <label for="email">Email</label>
                     @error('email')
-<<<<<<< HEAD
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-=======
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
->>>>>>> 84d7f058281557fd851d3693cacb5c304fe49a22
                     @enderror
                 </div>
 

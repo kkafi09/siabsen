@@ -18,17 +18,6 @@
   <title>SIAKAD | {{ $title }}</title>
 </head>
 
-<<<<<<< HEAD
-    <div class="container-full">
-        <div class="flex">
-            <div class="sidebar">
-                @include('partials.sidebar')
-            </div>
-            <div class="contents w-full h-screen">
-                @yield('container')
-            </div>
-        </div>
-=======
 <body>
   @include('partials.navbar')
 
@@ -40,7 +29,6 @@
       <div class="contents w-full h-screen transition-all ease-out">
         @yield('container')
       </div>
->>>>>>> 84d7f058281557fd851d3693cacb5c304fe49a22
     </div>
   </div>
 
