@@ -1,43 +1,26 @@
 <div
-  class=" flex-column rounded-none transition-transform ease-out navbar-toggler p-0 -translate-x-full absolute xl:translate-x-0 xl:static w-72 flex-shrink-0 bg-gray-700 text-white h-full">
+  class="flex-column top-0 left-0 rounded-none transition-transform ease-out navbar-toggler p-0 -translate-x-full absolute xl:translate-x-0 xl:relative w-72 flex-shrink-0 bg-navbarColour text-gray-600 h-full drop-shadow-md">
   @auth
-  <div class=" dropdown bg-gray-600 px-3 py-3 w-full">
-    <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
-      data-bs-toggle="dropdown" aria-expanded="false">
-      <img src="https://github.com/mdo.png" alt="" width="64" height="64" class="rounded-circle me-2">
-      <strong class="text-white">{{ auth()->user()->name }}</strong>
-    </a>
-    <ul class="dropdown-menu  text-white shadow" aria-labelledby="dropdownUser2 ">
-      <li><a class="dropdown-item" href="/profil-{{ Auth::user()->role }}">Profil</a></li>
-      <li><a class="dropdown-item" href="{{ route('dashboard.reset') }}">Ubah Password</a></li>
-      <li>
-        <hr class="dropdown-divider">
-      </li>
-      <li>
-        <form action="/logout" method="post">
-          @csrf
-          <button class="dropdown-item">Sign out</button>
-        </form>
-      </li>
-    </ul>
+  <div class="text-center mt-3 text-purpleDark title">
+    <p class="text-2xl font-bold">siAbsen</p>
+    <p class="text-xs mt-0">Improve ur alpha quality</p>
   </div>
-  <hr>
   @if(Auth::user()->role === 'siswa')
-  <ul class="nav nav-pills flex-column mb-auto text-sm">
+  <ul class="nav nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
-      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-white  {{ $active === " dashboard" ? "active"
-        : "" }}">
+      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-inherit  {{ $active === " dashboard"
+        ? "text-black" : "" }}">
         Dashboard
       </a>
     </li>
-    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-white  {{ $active === " profil-siswa"
+    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-inherit  {{ $active === " profil-siswa"
       ? "active" : "" }}">
       Profil Siswa
     </a>
     </li>
     <li>
-      <a href="{{route('dashboard.attendances')  }}" class="nav-link mt-2 text-white   {{ $active === " kehadiran-siswa"
-        ? "active" : "" }}">
+      <a href="{{route('dashboard.attendances')  }}" class="nav-link mt-2 text-inherit   {{ $active === "
+        kehadiran-siswa" ? "active" : "" }}">
         Kehadiran hari ini
       </a>
     </li>
