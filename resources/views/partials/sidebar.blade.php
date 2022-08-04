@@ -1,5 +1,5 @@
 <div
-  class=" flex-column transition-transform ease-out  -translate-x-full absolute xl:translate-x-0 xl:static w-72 flex-shrink-0 bg-gray-700 text-white h-full">
+  class=" flex-column rounded-none transition-transform ease-out navbar-toggler p-0 -translate-x-full absolute xl:translate-x-0 xl:static w-72 flex-shrink-0 bg-gray-700 text-white h-full">
   @auth
   <div class=" dropdown bg-gray-600 px-3 py-3 w-full">
     <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2"
@@ -23,7 +23,7 @@
   </div>
   <hr>
   @if(Auth::user()->role === 'siswa')
-  <ul class="nav nav-pills flex-column mb-auto ">
+  <ul class="nav nav-pills flex-column mb-auto text-sm">
     <li class="nav-item">
       <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-white  {{ $active === " dashboard" ? "active"
         : "" }}">

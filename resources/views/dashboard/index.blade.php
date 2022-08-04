@@ -90,7 +90,7 @@
                 <p class="text text-sm">100 Besar</p>
                 <p class="kehadiran text-lg">Kehadiran Pertama</p>
             </div>
-            <div class="daftarnama h-full w-full overflow-y-scroll">
+            <div class="daftarnama bg-white h-full w-full overflow-y-scroll">
                 <ul class="list-group list-group-flush">
                     @foreach ($kehadiran as $index => $hadir)
                     <li class="list-group-item grid grid-cols-3 ">
