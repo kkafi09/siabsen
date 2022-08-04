@@ -42,7 +42,6 @@ class DashboardController extends Controller
     {
         $search = $kehadiran->where('created_at', '=', Carbon::now())
             ->where('id', '=', auth()->user()->id);
-
         return view('dashboard.attendances', [
             'title' => "Attendances",
             'active' => "kehadiran-siswa",

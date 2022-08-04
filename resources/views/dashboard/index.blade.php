@@ -68,12 +68,12 @@
         <div class="w-7/12 min-h-full gap-y-7 flex flex-col">
             <div class="top-panel flex flex-row gap-x-6">
                 <div class="100-kehadiran-pertama h-fit w-2/3 rounded-xl relative bg-semiwhite p-4">
-                    <div class="header  bg-semiwhite text-black p-3">
+                    <div class="header  bg-semiwhite text-black p-3 pt-0">
                         <p class="text text-lg font-semibold align-text-top">100 Kehadiran Pertama</p>
                         <p class="kehadiran text-sm font-medium text-gray opacity-80">Yang tercepat yang akan tampil
                             disini</p>
                     </div>
-                    <div class="daftarnama max-h-80 bg-semiblue p-3 rounded-lg w-full overflow-y-scroll ">
+                    <div class="daftarnama max-h-80 bg-semiblue px-3 py-1 rounded-lg w-full overflow-y-scroll ">
                         <ul class="list-daftar ">
                             @foreach ($kehadiran as $index => $hadir)
                             <li class=" grid grid-cols-3 my-3">
@@ -89,54 +89,54 @@
                         </ul>
                     </div>
                 </div>
-                <div class="wrapper-credits flex flex-col relative ">
-                    <div class="info-absen ">
-                        <div class="info-kehadiran w-full h-fit drop-shadow-md relative ">
-                            <div class="top w-full text-white h-auto p-3 bg-red-700  font-semibold">
-                                <p class="uppercase">persentase kehadiran <span class="persentase">0</span>%</p>
-                                <p class="text-xs">Berikut detail rekap kehadiran anda.</p>
+                <div class="wrapper-credits flex flex-col relative gap-y-7 ">
+                    <div class="info-absen p-3 rounded-xl bg-semiwhite">
+                        <div class="info-kehadiran w-full drop-shadow-md relative ">
+                            <div class="top w-full font-semibold">
+                                <p class="capitalize">Absen Sekarang</p>
+                                <p class="text-xs text-gray opacity-80">Lihat waktu jangan sampai habis!</p>
                             </div>
-                            <div class="content-kehadiran w-full h-auto p-3  bg-white">
-
+                            <div class="countdown text-center font-bold text-purpleDark mt-8 text-3xl">
+                                <span class="hour">02</span>:<span class="minutes">31</span>:<span
+                                    class="second">33</span>
                             </div>
                         </div>
+                        <div
+                            class="button text-center text-white font-semibold mt-4 bg-gradient-to-r from-lightPurple to-purpleDark py-2 rounded-2xl">
+                            Absen Sekarang
+                        </div>
+                    </div>
+                    <div class="credits flex flex-col gap-y-2">
+                        <div
+                            class="kafi card-waktu text-black rounded-lg text-center w-full flex flex-row p-3 py-1 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
+                            <div class="text w-full">
+                                <p class=" text-gray opacity-80 font-medium text-xs ">Backend by</p>
+                                <p class="text-sm font-semibold text-gray opacity-90"> <span>Kafanal Kafi</span></p>
+                            </div>
+                        </div>
+                        <div
+                            class="atharafi card-waktu text-black rounded-lg text-center w-full flex flex-row p-3 py-1 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
+                            <div class="text w-full">
+                                <p class=" text-gray opacity-80 font-medium text-xs ">Frontend by</p>
+                                <p class="text-sm font-semibold text-gray opacity-90"> <span>Atharafi Affandy</span></p>
+                            </div>
 
-                    </div>
-                    <div
-                        class="kafi card-waktu text-black w-full flex flex-row p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
-                        <div class="text w-2/3">
-                            <p class=" text-sm capitalize">belum absen (presensi 6:00 - 9:00)</p>
-                            <p class="text-2xl"> <span>Waktu Habis</span></p>
                         </div>
-                        <div class="w-1/3 logo grid content-center justify-items-end">
-                            <i class="fa-solid fa- fa-3x fa-id-card text-gray opacity-80"></i>
-                        </div>
-                    </div>
-                    <div
-                        class="atharafi card-waktu text-black w-full flex flex-row p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
-                        <div class="text w-2/3">
-                            <p class=" text-sm capitalize">belum absen (presensi 6:00 - 9:00)</p>
-                            <p class="text-2xl"> <span>Waktu Habis</span></p>
-                        </div>
-                        <div class="w-1/3 logo grid content-center justify-items-end">
-                            <i class="fa-solid fa- fa-3x fa-id-card text-gray opacity-80"></i>
+                        <div
+                            class="adi card-waktu text-black rounded-lg text-center w-full flex flex-row p-3 py-1 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
+                            <div class="text w-full">
+                                <p class=" text-gray opacity-80 font-medium text-xs ">Designed by</p>
+                                <p class="text-sm font-semibold text-gray opacity-90"> <span>Prayoga Adi</span></p>
+                            </div>
+
                         </div>
                     </div>
-                    <div
-                        class="adi card-waktu text-black w-full flex flex-row p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
-                        <div class="text w-2/3">
-                            <p class=" text-sm capitalize">belum absen (presensi 6:00 - 9:00)</p>
-                            <p class="text-2xl"> <span>Waktu Habis</span></p>
-                        </div>
-                        <div class="w-1/3 logo grid content-center justify-items-end">
-                            <i class="fa-solid fa- fa-3x fa-id-card text-gray opacity-80"></i>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <div class="bottom-panel-info ">
                 <div
-                    class="adi card-waktu text-black w-full  p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-semiwhite flex flex-col gap-y-7 rounded-lg">
+                    class="text-black w-full  p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-semiwhite flex flex-col gap-y-7 rounded-lg">
                     <div class="text w-2/3">
                         <p class=" text-lg font-medium capitalize">Presentase Kehadiran</p>
                         <p class="text-xs"> Data kehadiran tertera dibawah jika ada yang janggal segera laporkan ke

@@ -43,3 +43,47 @@ progress::-webkit-progress-bar {
 ::-webkit-scrollbar-thumb:hover {
     background: #acacf1;
 }
+.fc .fc-button-primary {
+    background-color: white;
+    color: #333483;
+    opacity: 50%;
+    border: none;
+}
+.fc .fc-button-primary:hover {
+    background-color: white;
+    color: #333483;
+    opacity: 50%;
+    border: none;
+}
+.fc .fc-button-primary::after {
+    background-color: white;
+    color: #333483;
+    opacity: 50%;
+    border: none;
+}
+.fc-day-sun {
+    color: red;
+}
+.fc-col-header,
+.fc-col-header-cell-cushion {
+    color: #595ac3;
+}
+.fc-theme-standard td,
+.fc-theme-standard .fc-scrollgrid,
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border: none;
+}
+.fc-daygrid-day-frame.fc-scrollgrid-sync-inner .fc-daygrid-day-top {
+    text-align: center;
+}
+.fc .fc-daygrid-day-top {
+    display: flex;
+    text-align: center;
+    flex-direction: column-reverse;
+}
+.fc .fc-daygrid-day.fc-day-today {
+    background-color: rgba(255, 220, 40, 0.15);
+    background-color: #42c0aa;
+    border-radius: 10px;
+}
