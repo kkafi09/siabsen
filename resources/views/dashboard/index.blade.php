@@ -136,10 +136,12 @@
             </div>
             <div class="bottom-panel-info ">
                 <div
-                    class="text-black w-full  p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-semiwhite flex flex-col gap-y-7 rounded-lg">
+                    class="text-black w-full  p-3 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-semiwhite flex flex-col gap-y-3 rounded-lg">
                     <div class="text w-2/3">
-                        <p class=" text-lg font-medium capitalize">Presentase Kehadiran</p>
-                        <p class="text-xs"> Data kehadiran tertera dibawah jika ada yang janggal segera laporkan ke
+                        <p class=" text-lg font-semibold capitalize">Presentase Kehadiran</p>
+                        <p class="text-xs font-medium text-gray opacity-80"> Data kehadiran tertera dibawah jika ada
+                            yang janggal
+                            segera laporkan ke
                             guru piket yang bertugas</p>
                     </div>
                     <div class="progressbar w-full">
