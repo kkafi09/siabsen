@@ -1,8 +1,7 @@
-@extends('layouts.main')
-@section('container')
+@extends('layouts.main') @section('container')
     <div class="wrapper p-4 w-full bg-backgroundColour">
         <div class="maincontent flex flex-col xl:flex-row gap-4 my-4">
-            <div class="jamAbsen w-6/12 flex flex-col gap-y-6">
+            <div class="jamAbsen xl:w-6/12 flex flex-col gap-y-6">
                 <div class="calendar w-full h-2/4">
                     <div id='calendar' class="rounded-lg p-3 h-full bg-white">
                     </div>
@@ -38,19 +37,20 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="w-1/3 logo grid content-center justify-items-end">
-                        <span class="material-symbols-rounded"> </span>
-                    </div>
+
                 </div>
 
             </div>
-            <div class="w-7/12 min-h-full gap-y-7 flex flex-col">
-                <div class="top-panel flex flex-row gap-x-6">
-                    <div class="100-kehadiran-pertama h-fit w-2/3 rounded-xl relative bg-semiwhite p-4">
+            <div class="xl:w-7/12 min-h-full gap-y-7 flex flex-col">
+                <div class="top-panel flex md:flex-row flex-col gap-6">
+                    <div class="100-kehadiran-pertama h-fit md:w-2/3 w-full  rounded-xl relative bg-semiwhite p-4">
                         <div class="header  bg-semiwhite text-black p-3 pt-0">
                             <p class="text text-lg font-semibold align-text-top">100 Kehadiran Pertama</p>
                             <p class="kehadiran text-sm font-medium text-gray opacity-80">Yang tercepat yang akan tampil
                                 disini</p>
+                        </div>
+                        <div class="w-1/3 logo grid content-center justify-items-end">
+                            <span class="material-symbols-rounded"> </span>
                         </div>
                         <div class="daftarnama max-h-80 bg-semiblue px-3 py-1 rounded-lg w-full overflow-y-scroll ">
                             <ul class="list-daftar ">
@@ -61,7 +61,9 @@
                                         </div>
                                         <div class="text capitalize col-span-2 grid content-center">
                                             <p class="font-medium">{{ $index + 1 }}. {{ $hadir->name }}.</p>
-                                            <small>{{ $hadir->kelas }} ({{ $hadir->created_at->format('H:i:s') }})</small>
+                                            <small>{{ $hadir->kelas }}
+                                                ({{ $hadir->created_at->format('H:i:s') }})
+                                            </small>
                                         </div>
                                     </li>
                                 @endforeach
@@ -98,7 +100,8 @@
                                 class="atharafi card-waktu text-black rounded-lg text-center w-full flex flex-row p-3 py-1 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
                                 <div class="text w-full">
                                     <p class=" text-gray opacity-80 font-medium text-xs ">Frontend by</p>
-                                    <p class="text-sm font-semibold text-gray opacity-90"> <span>Atharafi Affandy</span></p>
+                                    <p class="text-sm font-semibold text-gray opacity-90"> <span>Atharafi Affandy</span>
+                                    </p>
                                 </div>
 
                             </div>
