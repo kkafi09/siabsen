@@ -90,7 +90,8 @@
                                 class="kafi card-waktu text-black rounded-lg text-center w-full flex flex-row p-3 py-1 drop-shadow-[0_0_5px_rgba(0,0,0,0.4)] bg-white">
                                 <div class="text w-full">
                                     <p class=" text-gray opacity-80 font-medium text-xs ">Backend by</p>
-                                    <p class="text-sm font-semibold text-gray opacity-90"> <span>M. Kafanal Kafi</span></p>
+                                    <p class="text-sm font-semibold text-gray opacity-90"> <span>M. Kafanal Kafi</span>
+                                    </p>
                                 </div>
                             </div>
                             <div
@@ -124,37 +125,54 @@
                                 guru piket yang bertugas</p>
                         </div>
                         <div class="progressbar w-full">
-                            <progress id="progress" class="w-full progressbar good" value="97" max="100"> <span
-                                    class="value">undefined</span> %</progress>
+                            <progress id="progress" class="w-full progressbar good"
+                                value="{{ $jumlah_kehadiran->where('status', 'masuk')->count() }}"
+                                max="{{ $jumlah_kehadiran->count() }}">
+                                <span class="value">undefined</span> %</progress>
                         </div>
                         <div class="statusContainer grid grid-cols-4 gap-6 p-2">
                             <div
                                 class="sakit w-full h-36 text-center bg-gradient-to-b grid grid-flow-col place-content-center from-lightPurpleInfo to-purpleInfo text-white rounded-lg">
                                 <div class="wrapper items-center grid grid-flow-row gap-y-3">
                                     <div class="title uppercase font-semibold text-lg ">sakit</div>
-                                    <div class="count"><span class="number text-3xl font-bold ">6</span>
+                                    <div class="count">
+                                        <span
+                                            class="number text-3xl font-bold ">{{ $jumlah_kehadiran->where('status', 'sakit')->count() }}
+                                        </span>
                                     </div>
                                 </div>
                             </div>
                             <div
                                 class="izin w-full h-36 text-center bg-gradient-to-b grid grid-flow-col place-content-center from-infoOrangeLight to-infoOrageDark text-white rounded-lg">
                                 <div class="wrapper grid grid-flow-row gap-y-3">
-                                    <div class="title uppercase font-semibold text-lg">izin</div>
-                                    <div class="count"><span class="number text-3xl font-bold">6</span></div>
+                                    <div class="title uppercase font-semibold text-lg">Izin</div>
+                                    <div class="count">
+                                        <span
+                                            class="number text-3xl font-bold ">{{ $jumlah_kehadiran->where('status', 'izin')->count() }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <div
                                 class="dispen w-full h-36 text-center bg-gradient-to-b grid grid-flow-col place-content-center from-infoBlueLight to-infoBlueDark text-white rounded-lg">
                                 <div class="wrapper grid grid-flow-row gap-y-3">
                                     <div class="title uppercase font-semibold text-lg">dispen</div>
-                                    <div class="count"><span class="number text-3xl font-bold">6</span></div>
+                                    <div class="count">
+                                        <span
+                                            class="number text-3xl font-bold ">{{ $jumlah_kehadiran->where('status', 'alpha')->count() }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <div
                                 class="alpha w-full h-36 text-center bg-gradient-to-b grid grid-flow-col place-content-center from-infoRedLight to-infoRedDark text-white rounded-lg">
                                 <div class="wrapper grid grid-flow-row gap-y-3">
                                     <div class="title uppercase font-semibold text-lg">alpha</div>
-                                    <div class="count"><span class="number text-3xl font-bold">6</span></div>
+                                    <div class="count">
+                                        <span
+                                            class="number text-3xl font-bold ">{{ $jumlah_kehadiran->where('status', 'dispensasi')->count() }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
 

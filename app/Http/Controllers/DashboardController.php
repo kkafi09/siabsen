@@ -6,7 +6,6 @@ use App\Models\Kehadiran;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -14,16 +13,20 @@ class DashboardController extends Controller
     {
         // $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())
         //         ->whereTime('created_at', '>', '06:00:00')
-        //         ->whereTime('created_at', '<', '13:00:00')->take(100)
+        //         ->whereTime('created_at', '<', '09:00:00')->take(100)
         //         ->where('role', auth()->user()->role);
 
 
-        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->where('role', auth()->user()->role)->take(100);
+        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->where('role', auth()->user()->role)->where('status', 'masuk')->take(100);
+
+        $jumlahKehadiran = $kehadiran::where('role', auth()->user()->role)->select('status');
+        // dd($jumlahKehadiran->get());
 
         return view('dashboard.index', [
             'title' => "Dashboard",
             'active' => "dashboard",
             'kehadiran' => $kehadiranHariIni->get(),
+            'jumlah_kehadiran' => $jumlahKehadiran->get(),
         ]);
     }
 
@@ -57,6 +60,7 @@ class DashboardController extends Controller
 
         $storedData['name'] = auth()->user()->name;
         $storedData['kelas'] = auth()->user()->kelas;
+        $storedData['status'] = $request->input('attendance');
         $storedData['role'] = auth()->user()->role;
 
         Kehadiran::create($storedData);

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('kelas');
             $table->enum('role', ['admin', 'guru', 'siswa'])->default('siswa');
+            $table->enum('status', ['masuk', 'sakit', 'izin', 'dispensasi', 'alpha']);
             $table->timestamps();
         });
     }
