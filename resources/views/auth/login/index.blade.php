@@ -19,10 +19,6 @@
             <div class="col-lg-7 text-center w-full ">
                 <h1 class="display-4 text-3xl font-semibold text-gray-500">Si<span
                         class="text-red-700 uppercase font-bold">absen</span></h1>
-                <div class="creditsname text-xs">
-                    <p class="">Backend by <a target="_blank" href="">Kafanal Kafi</a></p>
-                    <p class="">Frontend by <a target="_blank" href="">Atharafi Affandy</a></p>
-                </div>
             </div>
             <form class="px-4 py-5 w-full" method="post" action="/login">
                 @csrf

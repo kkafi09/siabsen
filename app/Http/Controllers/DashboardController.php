@@ -12,13 +12,13 @@ class DashboardController extends Controller
 {
     public function index(Kehadiran $kehadiran)
     {
-        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())
-                ->whereTime('created_at', '>', '06:00:00')
-                ->whereTime('created_at', '<', '13:00:00')->take(100)
-                ->where('role', auth()->user()->role);
+        // $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())
+        //         ->whereTime('created_at', '>', '06:00:00')
+        //         ->whereTime('created_at', '<', '13:00:00')->take(100)
+        //         ->where('role', auth()->user()->role);
 
 
-        // $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->take(100);
+        $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->where('role', auth()->user()->role)->take(100);
 
         return view('dashboard.index', [
             'title' => "Dashboard",
