@@ -1,29 +1,7 @@
 @extends('layouts.main') @section('container')
 <div class="wrapper p-4 w-full bg-backgroundColour">
-    {{-- <div class="alert-group grid gap-y-4">
-        <div class="top-text">
-            <h1 class="text-xl uppercase text-stone-500">Dashboard</h1>
-            <p class="last-change text-stone-500 text-xs">
-                Terakhir diperbarui: 2022-06-23 07:01:41
-            </p>
-        </div>
-        <div class="phone-num w-full h-fit text-white p-3 font-bold bg-green-600">
-            <p>NOMOR WA Anda adalah</p>
-            <p>
-                Pastikan No WA anda Aktif.
-                <span class="font-normal">Klik
-                    <a href="#" class="bg-white text-black">disini</a> untuk merubahnya</span>
-            </p>
-        </div>
-        <div class="piket w-full h-fit text-white p-3 bg-blue-500">
-            <p>
-                <span class="font-bold">Piket pada hari ini </span>: Firmansyah
-                Ayatullah, S.Kom dan Joni Setiyawan Saputra
-            </p>
-        </div>
-    </div> --}}
     <div class="maincontent flex flex-col xl:flex-row gap-4 my-4">
-        <div class="jamAbsen w-6/12 flex flex-col gap-y-6">
+        <div class="jamAbsen xl:w-6/12 flex flex-col gap-y-6">
             <div class="calendar w-full h-2/4">
                 <div id='calendar' class="rounded-lg p-3 h-full bg-white">
                 </div>
@@ -65,9 +43,9 @@
             </div>
 
         </div>
-        <div class="w-7/12 min-h-full gap-y-7 flex flex-col">
-            <div class="top-panel flex flex-row gap-x-6">
-                <div class="100-kehadiran-pertama h-fit w-2/3 rounded-xl relative bg-semiwhite p-4">
+        <div class="xl:w-7/12 min-h-full gap-y-7 flex flex-col">
+            <div class="top-panel flex md:flex-row flex-col gap-6">
+                <div class="100-kehadiran-pertama h-fit md:w-2/3 w-full  rounded-xl relative bg-semiwhite p-4">
                     <div class="header  bg-semiwhite text-black p-3 pt-0">
                         <p class="text text-lg font-semibold align-text-top">100 Kehadiran Pertama</p>
                         <p class="kehadiran text-sm font-medium text-gray opacity-80">Yang tercepat yang akan tampil
@@ -148,7 +126,7 @@
                         <progress id="progress" class="w-full progressbar good" value="97" max="100"> <span
                                 class="value">undefined</span> %</progress>
                     </div>
-                    <div class="statusContainer grid grid-cols-4 gap-6 p-2">
+                    <div class="statusContainer grid md:grid-cols-4 grid-cols-2 md:gap-6 gap-3 md:p-2">
                         <div
                             class="sakit w-full h-36 text-center bg-gradient-to-b grid grid-flow-col place-content-center from-lightPurpleInfo to-purpleInfo text-white rounded-lg">
                             <div class="wrapper items-center grid grid-flow-row gap-y-3">

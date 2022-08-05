@@ -3,7 +3,7 @@
 @section('container')
 <div class="wrapper py-3 px-5 w-full h-full bg-backgroundColour">
     <div class="header-text text-black w-full bg-semiwhite p-3 rounded-lg">
-        <h1 class="uppercase font-semibold text-xl text-gray">Data profil: {{ $profile->name }}</h1>
+        <h1 class="capitalize font-semibold text-xl text-gray">Data profil: {{ $profile->name }}</h1>
         <p class="text-xs text-gray opacity-80">Data diri yang tampil seharusnya harus sama dengan data yang ada di
             raport</p>
     </div>
