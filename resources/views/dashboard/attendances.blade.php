@@ -1,27 +1,47 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="wrapper h-screen px-5 py-3">
-
-    <h1>Kehadiran hari ini</h1>
-    @if (session()->has('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        {{ session('success') }}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+<div class="wrapper flex flex-col gap-y-4 h-screen px-5 py-3 bg-backgroundColour">
+    <div class="topBar">
+        <div class="title w-full bg-semiwhite p-4 rounded-2xl">
+            <h1 class="text-xl font-semibold text-gray">Kehadiran hari ini</h1>
+            <p class="text-xs text-gray opacity-80">Lakukan absensi dibawah untuk melakukan konfirmasi status kehadiran
+            </p>
+        </div>
+        @if (session()->has('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            {{ session('success') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        @endif
     </div>
-    @endif
-    {{-- @if(Illuminate\Support\Carbon::now()->between('06:00:00', '19:00:00') && $search->count()) --}}
-    <form action="/attend" method="post">
-        @csrf
-        <select class="form-select" name="attendance">
-            <option selected disabled>Kehadiran anda..</option>
-            <option value="hadir">Hadir</option>
-            <option value="izin">Izin</option>
-        </select>
+    <div class="form w-full h-fit text-purpleDark font-semibold bg-semiwhite p-4 rounded-2xl">
+        {{-- @if(Illuminate\Support\Carbon::now()->between('06:00:00', '19:00:00') && $search->count()) --}}
+        <form action="/attend" method="post" class="flex flex-col gap-y-5 ">
+            @csrf
+            <div class="bg-semiblue px-4 rounded-xl py-3 masuk">
+                <input type="radio" name="attendance" id="" value="Masuk">
+                <label for="attendance" class="ml-4">Masuk</label>
+            </div>
+            <div class="bg-semiblue px-4 rounded-xl py-3 sakit">
+                <input type="radio" name="attendance" id="" value="Sakit">
+                <label for="attendance" class="ml-4">Sakit</label>
+            </div>
+            <div class="bg-semiblue px-4 rounded-xl py-3 izin">
+                <input type="radio" name="attendance" id="" value="Izin">
+                <label for="attendance" class="ml-4">Izin</label>
+            </div>
+            <div class="bg-semiblue px-4 rounded-xl py-3 dispen">
+                <input type="radio" name="attendance" id="" value="Dispensasi">
+                <label for="attendance" class="ml-4">Dispensasi</label>
+            </div>
 
-        <button type="submit" class="btn btn-primary">Kirim</button>
-    </form>
-    {{-- @endif --}}
+
+            <button type="submit"
+                class="p-2 rounded-xl bg-gradient-to-r text-white from-lightPurpleInfo to-purpleInfo">Submit</button>
+        </form>
+        {{-- @endif --}}
+    </div>
 </div>
 
 @endsection

@@ -27,6 +27,9 @@ module.exports = {
             height: {
                 sixty: "60%",
             },
+            maxHeight: {
+                80: "18rem",
+            },
         },
     },
     plugins: [],
