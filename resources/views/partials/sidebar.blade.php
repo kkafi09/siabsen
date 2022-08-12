@@ -1,9 +1,14 @@
 <div
-  class="flex-column top-0 left-0 rounded-none transition-transform ease-out navbar-toggler p-0 -translate-x-full absolute xl:translate-x-0 xl:relative w-72 flex-shrink-0 bg-navbarColour text-gray-600 h-full drop-shadow-md">
+  class="flex-column top-0 left-0 rounded-none h-full transition-transform ease-out navbar-toggler p-0 z-50 -translate-x-full absolute xl:translate-x-0 xl:relative w-72 flex-shrink-0 bg-navbarColour text-gray-600  drop-shadow-md">
   @auth
-  <div class="text-center mt-3 text-purpleDark title">
-    <p class="text-2xl font-bold">siAbsen</p>
-    <p class="text-xs mt-0">Improve ur alpha quality</p>
+  <div class="topBar justify-center flex flex-row closer">
+    <div class="text-center mt-3 text-purpleDark title">
+      <p class="text-2xl font-bold">siAbsen</p>
+      <p class="text-xs mt-0">Improve ur alpha quality</p>
+    </div>
+    <div class=" absolute hidden text-2xl top-3 right-3">
+      <i class="fa-solid fa-xmark closer "></i>
+    </div>
   </div>
   @if(Auth::user()->role === 'siswa')
   <ul class="nav nav-pills flex-column mb-auto text-sm font-semibold">

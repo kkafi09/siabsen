@@ -23,8 +23,8 @@
   <title>SIAKAD | {{ $title }}</title>
 </head>
 
-<body>
-  <div class="container-full flex flex-row">
+<body class="">
+  <div class="container-full flex flex-row ">
     <div class="top-nav ">
       @include('partials.sidebar')
     </div>
@@ -32,7 +32,8 @@
       <div class="sidebar   ">
         @include('partials.navbar')
       </div>
-      <div class="contents w-full h-screen transition-all ease-out">
+      <div class="hidden black-container bg-black opacity-30 w-full h-full absolute z-30"></div>
+      <div class="contents w-full h-screen transition-all ease-out ">
         @yield('container')
       </div>
     </div>
