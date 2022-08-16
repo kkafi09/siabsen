@@ -16,7 +16,7 @@
         @endif
     </div>
     <div class="form w-full h-fit text-purpleDark font-semibold bg-semiwhite p-4 rounded-2xl">
-        @if (Illuminate\Support\Carbon::now()->between('06:00:00', '10:00:00') && $search->count())
+        {{-- @if (Illuminate\Support\Carbon::now()->between('06:00:00', '10:00:00') && $search->count()) --}}
         <form action="/attend" method="post" class="flex flex-col gap-y-5 ">
             @csrf
             <div class="bg-semiblue px-4 rounded-xl py-3 masuk">
@@ -40,7 +40,9 @@
             <button type="submit"
                 class="p-2 rounded-xl bg-gradient-to-r text-white from-lightPurpleInfo to-purpleInfo">Submit</button>
         </form>
-        @endif
+        {{-- @else --}}
+        <p>Absen Sudah ditutup</p>
+        {{-- @endif --}}
 
     </div>
 </div>

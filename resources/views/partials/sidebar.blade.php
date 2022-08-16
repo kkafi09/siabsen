@@ -6,8 +6,8 @@
       <p class="text-2xl font-bold">siAbsen</p>
       <p class="text-xs mt-0">Improve ur alpha quality</p>
     </div>
-    <div class=" absolute hidden text-2xl top-3 right-3">
-      <i class="fa-solid fa-xmark closer "></i>
+    <div class=" absolute hidden-button hidden text-2xl top-3 right-3">
+      <i class="fa-solid fa-xmark closer-button hidden hover:cursor-pointer"></i>
     </div>
   </div>
   @if(Auth::user()->role === 'siswa')

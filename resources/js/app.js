@@ -1,7 +1,7 @@
 import "./bootstrap";
 const arr = [
     document.querySelector(".hamburger-button"),
-    document.querySelector(".closer"),
+    document.querySelector(".closer-button"),
 ];
 arr.forEach((element) => {
     element.addEventListener("click", () => {
@@ -10,6 +10,7 @@ arr.forEach((element) => {
             .classList.toggle("-translate-x-full");
         document.body.classList.toggle("overflow-hidden");
         document.querySelector(".black-container").classList.toggle("hidden");
+        document.querySelector(".hidden-button").classList.toggle("hidden");
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
