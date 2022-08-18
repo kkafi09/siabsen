@@ -1,17 +1,17 @@
 <nav class="navbar navbar-expand-lg text-white  bg-navbarColour drop-shadow-md">
   <div class="container">
-    <div class="hamburger lg:hidden">
+    <div class="hamburger xl:hidden">
       <div class="burger">
-        <button>
-          <i class="fa-solid fa-bars hamburger-button" id="hamburger"></i>
+        <button class="w-fit h-fit">
+          <i class="fa-solid fa-bars hamburger-button text-xl transition-all duration-100 ease-linear active:scale-75 text-black px-4 "
+            id="hamburger"></i>
         </button>
       </div>
-      <div class="back"></div>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon transition ease-out duration-75 hover:scale-150 grid content-center"><i
-          class="fa-solid fa-ellipsis-vertical"></i></span>
+          class="fa-solid fa-ellipsis-vertical text-black"></i></span>
     </button>
     <div class="collapse navbar-collapse navbar-toggler transition-all ease-in-out duration-100" id="navbarNav">
       <ul class="navbar-nav ms-auto flex flex-row justify-end">

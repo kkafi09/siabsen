@@ -75,14 +75,14 @@
                                 <p class="text-xs text-gray opacity-80">Lihat waktu jangan sampai habis!</p>
                             </div>
                             <div class="countdown text-center font-bold text-purpleDark mt-8 text-3xl">
-                                <span class="hour">02</span>:<span class="minutes">31</span>:<span
-                                    class="second">33</span>
+                                <span class="count" id="countdown"></span>
                             </div>
                         </div>
-                        <div
-                            class="button text-center text-white font-semibold mt-4 bg-gradient-to-r from-lightPurple to-purpleDark py-2 rounded-2xl">
-                            Absen Sekarang
-                        </div>
+                        <a href="{{route('dashboard.attendances')  }}">
+                            <div
+                                class="button absen-button hover:scale-110 transition-all ease-in duration-150 active:scale-90 text-center text-white font-semibold mt-4 bg-gradient-to-r from-lightPurple to-purpleDark py-2 rounded-2xl">
+                                Absen Sekarang!</div>
+                        </a>
                     </div>
                     <div class="credits flex flex-col gap-y-2">
                         <div
