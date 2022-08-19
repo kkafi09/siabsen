@@ -13,19 +13,16 @@
   @if(Auth::user()->role === 'siswa')
   <ul class="nav nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
-      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-inherit  {{ $active === " dashboard"
-        ? "text-black" : "" }}">
+      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-inherit  {{ Request::is('/') ? "active" : "" }}">
         Dashboard
       </a>
     </li>
-    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-inherit  {{ $active === " profil-siswa"
-      ? "active" : "" }}">
+    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-inherit  {{ Request::is('profile*') ? "active" : "" }}">
       Profil Siswa
     </a>
     </li>
     <li>
-      <a href="{{route('dashboard.attendances')  }}" class="nav-link mt-2 text-inherit   {{ $active === "
-        kehadiran-siswa" ? "active" : "" }}">
+      <a href="{{route('dashboard.attendances')  }}" class="nav-link mt-2 text-inherit  {{ Request::is('attendances') ? "active" : "" }}">
         Kehadiran hari ini
       </a>
     </li>
@@ -60,15 +57,15 @@
         Dashboard
       </a>
     </li>
-    <a href=" {{ route('dashboard.edit.student') }}" class="nav-link link-dark {{ $active === " edit-siswa" ? "active"
+    <a href=" {{ route('dashboard.student') }}" class="nav-link link-dark {{ $active === " edit-siswa" ? "active"
       : "" }}">
-      Edit Students
+      Data Students
     </a>
     </li>
     <li>
-      <a href="{{ route('dashboard.edit.teacher') }}" class="nav-link link-dark  {{ $active === " edit-guru" ? "active"
+      <a href="{{ route('dashboard.teacher') }}" class="nav-link link-dark  {{ $active === " edit-guru" ? "active"
         : "" }}">
-        Edit Teachers
+        Data Teachers
       </a>
     </li>
   </ul>

@@ -20,15 +20,16 @@
           <div class=" dropdown w-full ">
             <a href="#" class="flex gap-x-6 align-items-center  link-dark text-decoration-none dropdown-toggle"
               id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-              <img src="https://github.com/mdo.png" alt="" width="56" height="56" class="rounded-circle me-2">
+              <img src="{{  Auth::user()->gravatar()  }}" alt="{{ Auth::user()->name }}" width="56" height="56" class="rounded-circle me-2">
               <div class="users">
                 <p class="uppercase text-sm font-bold">{{ auth()->user()->name }}</p>
                 <p class="uppercase text-xs font-semibold">Kelas {{ auth()->user()->kelas }}</p>
               </div>
             </a>
             <ul class="dropdown-menu  text-white shadow" aria-labelledby="dropdownUser2 ">
-              <li><a class="dropdown-item" href="/profil-{{ Auth::user()->role }}">Profil</a></li>
-              <li><a class="dropdown-item" href="{{ route('dashboard.reset') }}">Ubah Password</a></li>
+              <li><a class="dropdown-item" href="{{ route('dashboard.profile') }}">Profil</a></li>
+              <li><a class="dropdown-item" href="{{ route('password.edit') }}">Ubah Password</a></li>
+              <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Update Profile</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>

@@ -23,9 +23,9 @@
   <title>SIAKAD | {{ $title }}</title>
 </head>
 
-<body class="">
-  <div class="container-full flex flex-row ">
-    <div class="top-nav ">
+<body class="m-0">
+  <div class="container-full flex flex-row">
+    <div class="top-nav">
       @include('partials.sidebar')
     </div>
     <div class="flex flex-col w-full">

@@ -32,13 +32,6 @@ class LoginController extends Controller
 
     }
 
-    public function update() {
-        return view("auth.resetPassword.index", [
-            'title' => "Reset Password",
-            'active' => "reset"
-        ]);
-    }
-
     public function logout(Request $request){
         Auth::logout();
 
