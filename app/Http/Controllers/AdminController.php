@@ -10,27 +10,30 @@ class AdminController extends Controller
     public function index(){
         return view('admin.index', [
             'title' => "Dashboard Admin",
-            'active' => "dashboard-admin"
         ]);
     }
 
-    public function editStudents(){
+    public function dataStudents()
+    {
         $students = User::where('role', "siswa")->get();
 
-        return view("admin.edit-students", [
-            'title' => "Edit Students",
-            'active' => "edit-siswa",
+        return view("admin.students", [
+            'title' => "Data Students",
             'students' => $students
         ]);
     }
 
-    public function editTeachers(){
+    public function dataTeachers()
+    {
         $teachers = User::where('role', "guru")->get();
 
-        return view('admin.edit-teachers', [
+        return view('admin.teachers', [
             'title' => "Edit Teachers",
-            'active' => "edit-guru",
             'teachers' => $teachers
         ]);
+    }
+
+    public function studentExport()
+    {
     }
 }

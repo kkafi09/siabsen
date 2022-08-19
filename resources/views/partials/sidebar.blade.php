@@ -31,19 +31,16 @@
   @if(Auth::user()->role === 'guru')
   <ul class="nav nav-pills  flex-column mb-auto">
     <li class="nav-item">
-      <a href="{{ route('dashboard.index') }}" class="nav-link text-white {{ $active === " dashboard" ? "active" : ""
-        }}">
+      <a href="{{ route('dashboard.index') }}" class="nav-link text-white {{ Request::is('/') ? "active" : "" }}">
         Dashboard
       </a>
     </li>
-    <a href="{{route('dashboard.profile')  }}" class="nav-link text-white{{ $active === " profil-guru" ? "active" : ""
-      }}">
+    <a href="{{route('dashboard.profile')  }}" class="nav-link text-white{{ Request::is('profile*') ? "active" : "" }}">
       Profil Guru
     </a>
     </li>
     <li>
-      <a href="{{route('dashboard.attendances')  }}" class="nav-link text-white  {{ $active === " kehadiran-guru"
-        ? "active" : "" }}">
+      <a href="{{route('dashboard.attendances')  }}" class="nav-link text-white  {{ Request::is('attendances') }}">
         Kehadiran hari ini
       </a>
     </li>
@@ -52,19 +49,16 @@
   @if(Auth::user()->role === 'admin')
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a href="{{ route('dashboard.admin') }}" class="nav-link link-dark {{ $active === " dashboard-admin" ? "active"
-        : "" }}">
+      <a href="{{ route('dashboard.admin') }}" class="nav-link link-dark {{ Request::is('dashboard-admin') ? "active" : "" }}">
         Dashboard
       </a>
     </li>
-    <a href=" {{ route('dashboard.student') }}" class="nav-link link-dark {{ $active === " edit-siswa" ? "active"
-      : "" }}">
+    <a href=" {{ route('dashboard.student') }}" class="nav-link link-dark {{ Request::is('student*') ? "active" : "" }}">
       Data Students
     </a>
     </li>
     <li>
-      <a href="{{ route('dashboard.teacher') }}" class="nav-link link-dark  {{ $active === " edit-guru" ? "active"
-        : "" }}">
+      <a href="{{ route('dashboard.teacher') }}" class="nav-link link-dark  {{ Request::is('teacher*') ? "active" : "" }}">
         Data Teachers
       </a>
     </li>

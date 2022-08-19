@@ -12,10 +12,11 @@ class UpdateProfileInformationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(User $user)
     {
-        return view('dashboard.update', [
-            "title" => "Update profile"
+        return view('admin.update', [
+            "title" => "Update profile",
+            "user" => $user
         ]);
     }
 
@@ -75,9 +76,8 @@ class UpdateProfileInformationController extends Controller
             'name' => 'string|min:3|max:191|required'
         ]);
 
-        $user->where('id', auth()->user()->id)->update(['name' => $request->name]);
-
-        return back()->with('message', "Your profile has been updated");
+        $user->where('email', $user->email)->update(['name' => $request->name]);
+        return redirect(($user->role == "siswa" ? "student" : "teacher") . "/data")->with('message', "Your profile has been updated");
     }
 
     /**

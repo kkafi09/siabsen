@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\UpdateProfileInformationController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,21 @@ Route::post('/register', [RegisterController::class, "store"]);
 
 Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
     Route::get('/dashboard-admin', [AdminController::class, "index"])->name('dashboard.admin');
-    Route::get('/data-student', [AdminController::class, "dataStudents"])->name('dashboard.student');
-    Route::get('/data-teacher', [AdminController::class, "dataTeachers"])->name('dashboard.teacher');
+    Route::get("/{user:email}/edit", [UpdateProfileInformationController::class, "index"])->name('dashboard.edit');
+    Route::put("/update/{user:email}", [UpdateProfileInformationController::class, "update"])->name('dashboard.update');
+    Route::delete("/delete/{user:email}", [UserController::class, "destroy"])->name("dashboard.delete");
+
+    Route::prefix('student')->group(function () {
+        Route::get('data', [AdminController::class, "dataStudents"])->name('dashboard.student');
+        Route::get('export', [UserController::class, "exportStudent"])->name('dashboard.export.student.excel');
+        Route::post('import', [UserController::class, "importStudent"])->name('dashboard.import.student.excel');
+    });
+
+    Route::prefix('teacher')->group(function () {
+        Route::get('data', [AdminController::class, "dataTeachers"])->name('dashboard.teacher');
+        Route::get('export', [UserController::class, "exportTeacher"])->name('dashboard.export.teacher.excel');
+        Route::post('import', [UserController::class, "importTeacher"])->name('dashboard.import.teacher.excel');
+    });
 });
 
 Route::group(['middleware' => ['auth']], function () {
@@ -47,5 +61,4 @@ Route::group(['middleware' => ['auth']], function () {
         Route::get("/edit-password", [UpdatePasswordController::class, "index"])->name('password.edit');
         Route::put("/update-password", [UpdatePasswordController::class, "update"])->name('password.update');
     });
-
 });
