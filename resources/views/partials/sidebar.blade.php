@@ -11,31 +11,36 @@
     </div>
   </div>
   @if(Auth::user()->role === 'siswa')
-  <ul class="nav nav-pills flex-column mb-auto text-sm font-semibold">
+  <ul class="nav mt-3 nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
-      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-inherit  {{ Request::is('/') ? "active" : "" }}">
+
+      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-inherit  {{ Request::is('/') ? " active" : ""
+        }}">
         Dashboard
       </a>
     </li>
-    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-inherit  {{ Request::is('profile*') ? "active" : "" }}">
+    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-inherit  {{ Request::is('profile*') ? " active"
+      : "" }}">
       Profil Siswa
     </a>
     </li>
     <li>
-      <a href="{{route('dashboard.attendances')  }}" class="nav-link mt-2 text-inherit  {{ Request::is('attendances') ? "active" : "" }}">
+      <a href="{{route('dashboard.attendances')  }}"
+        class="nav-link mt-2 text-inherit  {{ Request::is('attendances') ? " active" : "" }}">
         Kehadiran hari ini
       </a>
     </li>
   </ul>
   @endif
   @if(Auth::user()->role === 'guru')
-  <ul class="nav nav-pills  flex-column mb-auto">
+  <ul class="nav px-2 w-full mt-3 nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
-      <a href="{{ route('dashboard.index') }}" class="nav-link text-white {{ Request::is('/') ? "active" : "" }}">
+      <a href="{{ route('dashboard.index') }}" class="nav-link text-white {{ Request::is('/') ? " active" : "" }}">
         Dashboard
       </a>
     </li>
-    <a href="{{route('dashboard.profile')  }}" class="nav-link text-white{{ Request::is('profile*') ? "active" : "" }}">
+    <a href="{{route('dashboard.profile')  }}" class="nav-link text-white{{ Request::is('profile*') ? " active" : ""
+      }}">
       Profil Guru
     </a>
     </li>
@@ -47,19 +52,34 @@
   </ul>
   @endif
   @if(Auth::user()->role === 'admin')
-  <ul class="nav nav-pills flex-column mb-auto">
+  <ul class="nav px-2 mt-3 nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
-      <a href="{{ route('dashboard.admin') }}" class="nav-link link-dark {{ Request::is('dashboard-admin') ? "active" : "" }}">
-        Dashboard
+      <a href="{{ route('dashboard.admin') }}"
+        class="nav-link link-dark gap-x-10 flex flex-row{{ Request::is('dashboard-admin') ? " bg-white drop-shadow-xl
+        text-fontColor" : "" }}">
+        <span class="material-symbols-rounded">
+          grid_view
+        </span>
+        <p class=" grid place-content-center">Dashboard</p>
       </a>
     </li>
-    <a href=" {{ route('dashboard.student') }}" class="nav-link link-dark {{ Request::is('student*') ? "active" : "" }}">
-      Data Students
+    <a href=" {{ route('dashboard.student') }}"
+      class="nav-link link-dark gap-x-10 flex flex-row{{ Request::is('student*') ? " bg-white drop-shadow-xl
+      text-fontColor" : "" }}">
+      <span class="material-symbols-rounded">
+        person
+      </span>
+      <p class=" grid place-content-center">Data Students</p>
     </a>
     </li>
     <li>
-      <a href="{{ route('dashboard.teacher') }}" class="nav-link link-dark  {{ Request::is('teacher*') ? "active" : "" }}">
-        Data Teachers
+      <a href="{{ route('dashboard.teacher') }}"
+        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('teacher*') ? " bg-white drop-shadow-xl
+        text-fontColor" : "" }}">
+        <span class="material-symbols-rounded">
+          person
+        </span>
+        <p class=" grid place-content-center">Data Teachers</p>
       </a>
     </li>
   </ul>

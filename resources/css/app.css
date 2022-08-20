@@ -87,3 +87,6 @@ progress::-webkit-progress-bar {
     background-color: #42c0aa;
     border-radius: 10px;
 }
+.daftarGuru ul li {
+    list-style: disc;
+}
