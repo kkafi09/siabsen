@@ -1,10 +1,11 @@
 @extends("layouts.main")
 
 @section('container')
-<div class="wrapper flex flex-row w-full gap-x-8 p-12">
+<div class="wrapper-admin flex flex-row w-full gap-x-8 p-12">
     <div class="data-data w-full ">
         <div class="container-wrapper  flex flex-col w-full gap-y-8">
             <div class="jumlah-user flex flex-row gap-x-6 ">
+
                 <div
                     class="data-siswa text-gray w-full bg-white gap-y-4 py-4 rounded-xl text-center flex flex-col relative ">
                     <div class="total">

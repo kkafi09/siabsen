@@ -11,23 +11,40 @@
     </div>
   </div>
   @if(Auth::user()->role === 'siswa')
-  <ul class="nav mt-3 nav-pills flex-column mb-auto text-sm font-semibold">
+  <ul class="nav px-2 mt-3 nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
 
-      <a href="{{ route('dashboard.index') }}" class="nav-link mt-2 text-inherit  {{ Request::is('/') ? " active" : ""
-        }}">
-        Dashboard
+      <a href="{{ route('dashboard.index') }}" class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('/') ? "
+        bg-white drop-shadow-xl text-fontColor" : "" }}">
+        <span class="material-symbols-rounded">
+          grid_view
+        </span>
+        <p>
+          Dashboard
+        </p>
       </a>
     </li>
-    <a href="{{route('dashboard.profile')  }}" class="nav-link mt-2 text-inherit  {{ Request::is('profile*') ? " active"
-      : "" }}">
-      Profil Siswa
+    <a href="{{route('dashboard.profile')  }}"
+      class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('profile*') ? " bg-white drop-shadow-xl
+      text-fontColor" : "" }}">
+      <span class="material-symbols-rounded">
+        person
+      </span>
+      <p>
+        Profil Siswa
+      </p>
     </a>
     </li>
     <li>
       <a href="{{route('dashboard.attendances')  }}"
-        class="nav-link mt-2 text-inherit  {{ Request::is('attendances') ? " active" : "" }}">
-        Kehadiran hari ini
+        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('attendances') ? " bg-white drop-shadow-xl
+        text-fontColor" : "" }}">
+        <span class="material-symbols-rounded">
+          touch_app
+        </span>
+        <p>
+          Kehadiran hari ini
+        </p>
       </a>
     </li>
   </ul>

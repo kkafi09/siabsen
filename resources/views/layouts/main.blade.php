@@ -75,6 +75,7 @@
   </script>
   <script src="https://kit.fontawesome.com/b8dbbcbd36.js" crossorigin="anonymous"></script>
   @vite("resources/js/app.js")
+  @vite("resources/js/admin.js")
 
 </body>
 

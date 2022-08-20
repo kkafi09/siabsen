@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('container')
-<div class="wrapper p-4 w-full bg-backgroundColour">
+<div class="wrapper-siswa p-4 w-full bg-backgroundColour">
     <div class="maincontent flex flex-col xl:flex-row gap-4 my-4">
         <div class="jamAbsen xl:w-6/12 flex flex-col gap-y-6">
             <div class="calendar w-full h-2/4">
