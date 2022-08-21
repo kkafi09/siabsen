@@ -2,14 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kehadiran;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function index(){
+        $users = User::all();
+        $attendances = Kehadiran::whereDate('created_at', Carbon::today());
+        $alpha = Kehadiran::join('users', 'users.name', '!=', 'kehadirans.name')->whereDate('users.created_at', Carbon::today());
+
         return view('admin.index', [
             'title' => "Dashboard Admin",
+            'users' => $users,
+            'attendances' => $attendances,
+            'alpha' => $alpha
         ]);
     }
 

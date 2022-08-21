@@ -36,6 +36,13 @@ return [
             'throw' => false,
         ],
 
+        'hosting' => [
+            'driver' => 'local',
+            'root' => public_path() . '../../public_html/' . env('FOLDER_IN_PUBLIC_HTML') . '/storage',
+            'url' => env('APP_URL') . '/' . env('FOLDER_IN_PUBLIC_HTML') . '/storage',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
