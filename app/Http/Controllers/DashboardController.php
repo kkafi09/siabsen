@@ -18,8 +18,9 @@ class DashboardController extends Controller
 
 
         $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->where('role', auth()->user()->role)->where('status', 'masuk')->take(100);
-
         $jumlahKehadiran = $kehadiran::where('role', auth()->user()->role)->select('status');
+        $status = Kehadiran::select('status');
+
         // dd($jumlahKehadiran->get());
 
         return view('dashboard.index', [
@@ -27,6 +28,9 @@ class DashboardController extends Controller
             'active' => "dashboard",
             'kehadiran' => $kehadiranHariIni->get(),
             'jumlah_kehadiran' => $jumlahKehadiran->get(),
+            'status' => $status->get(),
+            'kosong' => $status->count()
+
         ]);
     }
 
@@ -43,8 +47,9 @@ class DashboardController extends Controller
 
     public function attendances(Kehadiran $kehadiran)
     {
-        $search = $kehadiran->where('created_at', '=', Carbon::now())
-            ->where('id', '=', auth()->user()->id);
+        $search = $kehadiran->where('created_at', Carbon::now())
+            ->where('id', auth()->user()->id);
+
         return view('dashboard.attendances', [
             'title' => "Attendances",
             'active' => "kehadiran-siswa",

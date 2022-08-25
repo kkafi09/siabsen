@@ -9,12 +9,14 @@
             @csrf
             <input type="file" name="excel"
                 class="form text-sm p-2 rounded-lg border-2 border-collapse border-fontColor w-full">
-            <div class="button w-full text-center">
+            <div class="button w-full flex flex-row gap-x-7 justify-center">
                 <button type="submit"
-                    class="bg-gradient-to-r from-infoBlueLight to-infoBlueDark p-2 rounded-lg w-1/3 text-sm font-bold text-semiwhite">Import</button>
-                <a href="{{ route('dashboard.export.student.excel') }}"
-                    class=" bg-gradient-to-r from-infoBlueLight to-infoBlueDark p-2 rounded-lg w-2/3 text-sm font-bold text-semiwhite">Export
-                    to excel</a>
+                    class="bg-gradient-to-r from-infoBlueLight to-infoBlueDark  rounded-lg w-1/3 text-sm font-bold text-semiwhite">Import</button>
+                <button
+                    class="bg-gradient-to-r from-infoBlueLight to-infoBlueDark  rounded-lg w-1/3 text-sm font-bold text-semiwhite">
+                    <a href="{{ route('dashboard.export.student.excel') }}" class="p-3 px-4">Export
+                        to excel</a>
+                </button>
             </div>
         </form>
     </div>

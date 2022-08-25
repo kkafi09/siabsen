@@ -10,15 +10,18 @@
                     class="data-siswa text-gray w-full bg-white gap-y-4 py-4 rounded-xl text-center flex flex-col relative ">
                     <div class="total">
                         <p class="total-siswa text-xs font-medium opacity-80">Total siswa</p>
-                        <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $users->where('role', 'siswa')->count() }}</p>
+                        <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $users->where('role',
+                            'siswa')->count() }}</p>
                     </div>
                     <div class="laki">
                         <p class="total-siswa-lelaki text-xs font-medium opacity-80">Laki Laki</p>
-                        <p class="angka-siswa-lelaki font-extrabold text-xl text-fontColor">{{ $users->where('role', 'siswa')->where('jenis_kelamin', 'L')->count() }}</p>
+                        <p class="angka-siswa-lelaki font-extrabold text-xl text-fontColor">{{ $users->where('role',
+                            'siswa')->where('jenis_kelamin', 'L')->count() }}</p>
                     </div>
                     <div class="perempuan mb-4">
                         <p class="total-siswa-perempuan text-xs font-medium opacity-80">Perempuan</p>
-                        <p class="angka-siswa-perempuan font-extrabold text-xl text-fontColor">{{ $users->where('role', 'siswa')->where('jenis_kelamin', 'P')->count() }}</p>
+                        <p class="angka-siswa-perempuan font-extrabold text-xl text-fontColor">{{ $users->where('role',
+                            'siswa')->where('jenis_kelamin', 'P')->count() }}</p>
                     </div>
                     <div
                         class="footer absolute bottom-0 w-full text-sm font-semibold bg-gray rounded-b-xl text-white p-1">
@@ -29,15 +32,18 @@
                     class="data-guru text-gray w-full bg-white gap-y-4 py-4 rounded-xl text-center flex flex-col relative ">
                     <div class="total">
                         <p class="total-Guru text-xs font-medium opacity-80">Total Guru</p>
-                        <p class="angka-Guru font-extrabold text-xl text-fontColor">{{ $users->where('role', 'guru')->count() }}</p>
+                        <p class="angka-Guru font-extrabold text-xl text-fontColor">{{ $users->where('role',
+                            'guru')->count() }}</p>
                     </div>
                     <div class="laki">
                         <p class="total-Guru-lelaki text-xs font-medium opacity-80">Laki Laki</p>
-                        <p class="angka-Guru-lelaki font-extrabold text-xl text-fontColor">{{ $users->where('role', 'guru')->where('jenis_kelamin', 'L')->count() }}</p>
+                        <p class="angka-Guru-lelaki font-extrabold text-xl text-fontColor">{{ $users->where('role',
+                            'guru')->where('jenis_kelamin', 'L')->count() }}</p>
                     </div>
                     <div class="perempuan mb-4">
                         <p class="total-Guru-perempuan text-xs font-medium opacity-80">Perempuan</p>
-                        <p class="angka-Guru-perempuan font-extrabold text-xl text-fontColor">{{ $users->where('role', 'guru')->where('jenis_kelamin', 'P')->count() }}</p>
+                        <p class="angka-Guru-perempuan font-extrabold text-xl text-fontColor">{{ $users->where('role',
+                            'guru')->where('jenis_kelamin', 'P')->count() }}</p>
                     </div>
                     <div
                         class="footer absolute bottom-0 w-full text-sm font-semibold bg-gray rounded-b-xl text-white p-1">
@@ -52,11 +58,13 @@
                         <div class="text flex-row flex mb-4 divide-x-2 text-divColor ">
                             <div class="siswa w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Siswa</p>
-                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $alpha->where('users.role', 'siswa')->count() }}</p>
+                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{
+                                    $alpha->where('users.role', 'siswa')->count() }}</p>
                             </div>
                             <div class="guru w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Guru</p>
-                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{ $alpha->where('users.role', 'guru')->count() }}</p>
+                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{
+                                    $alpha->where('users.role', 'guru')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -70,11 +78,13 @@
                         <div class="text flex-row flex mb-4 divide-x-2 text-divColor ">
                             <div class="siswa w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Siswa</p>
-                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'siswa')->where('status', 'masuk')->count() }}</p>
+                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'siswa')->where('status', 'masuk')->count() }}</p>
                             </div>
                             <div class="guru w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Guru</p>
-                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'guru')->where('status', 'masuk')->count() }}</p>
+                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'guru')->where('status', 'masuk')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -90,11 +100,13 @@
                         <div class="text flex-row flex mb-4 divide-x-2 text-divColor ">
                             <div class="siswa w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Siswa</p>
-                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'siswa')->where('status', 'sakit')->count() }}</p>
+                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'siswa')->where('status', 'sakit')->count() }}</p>
                             </div>
                             <div class="guru w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Guru</p>
-                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'guru')->where('status', 'sakit')->count() }}</p>
+                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'guru')->where('status', 'sakit')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -108,11 +120,13 @@
                         <div class="text flex-row flex mb-4 divide-x-2 text-divColor ">
                             <div class="siswa w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Siswa</p>
-                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'siswa')->where('status', 'izin')->count() }}</p>
+                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'siswa')->where('status', 'izin')->count() }}</p>
                             </div>
                             <div class="guru w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Guru</p>
-                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'guru')->where('status', 'izin')->count() }}</p>
+                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'guru')->where('status', 'izin')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -128,11 +142,13 @@
                         <div class="text flex-row flex mb-4 divide-x-2 text-divColor ">
                             <div class="siswa w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Siswa</p>
-                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'siswa')->where('status', 'dispensasi')->count() }}</p>
+                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'siswa')->where('status', 'dispensasi')->count() }}</p>
                             </div>
                             <div class="guru w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Guru</p>
-                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'guru')->where('status', 'dispensasi')->count() }}</p>
+                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'guru')->where('status', 'dispensasi')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -146,11 +162,13 @@
                         <div class="text flex-row flex mb-4 divide-x-2 text-divColor ">
                             <div class="siswa w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Siswa</p>
-                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'siswa')->where('status', 'alpha')->count() }}</p>
+                                <p class="angka-siswa font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'siswa')->where('status', 'alpha')->count() }}</p>
                             </div>
                             <div class="guru w-full">
                                 <p class="judul text-xs font-medium text-gray opacity-80">Guru</p>
-                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{ $attendances->where('role', 'guru')->where('status', 'alpha')->count() }}</p>
+                                <p class="angka-guru font-extrabold text-xl text-fontColor">{{
+                                    $attendances->where('role', 'guru')->where('status', 'alpha')->count() }}</p>
                             </div>
                         </div>
                     </div>
@@ -163,7 +181,7 @@
 
         </div>
     </div>
-    <div class="daftar w-full rounded-xl h-full relative bg-white px-3 py-9">
+    <div class="daftar w-full rounded-xl h-full relative -z-10   bg-white px-3 py-9">
         <div class="waktu flex-row flex w-full">
             <div class="tanggal text-center w-full">
                 <p class="tanggal text-gray opacity-80 text-sm font-medium">Tanggal</p>

@@ -27,7 +27,7 @@
                 <p class="uppercase text-xs font-semibold"> {{ auth()->user()->kelas }}</p>
               </div>
             </a>
-            <ul class="dropdown-menu absolute top-0 right-4  text-white shadow" aria-labelledby="dropdownUser2 ">
+            <ul class="dropdown-menu absolute z-50 top-0 right-4  text-white shadow" aria-labelledby="dropdownUser2 ">
               <li><a class="dropdown-item" href="{{ route('dashboard.profile') }}">Profil</a></li>
               <li><a class="dropdown-item" href="{{ route('password.edit') }}">Ubah Password</a></li>
               <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Update Profile</a></li>

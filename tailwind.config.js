@@ -33,9 +33,16 @@ module.exports = {
             },
             height: {
                 sixty: "60%",
+                96: "22.2rem",
             },
             maxHeight: {
                 80: "18rem",
+            },
+            dropShadow: {
+                shadowAdi: "0px 2px 5px rgba(99, 100, 218, 0.25)",
+            },
+            fontFamily: {
+                sans: ['"Inter"', '"Poppins"', "sans-serif"],
             },
         },
     },

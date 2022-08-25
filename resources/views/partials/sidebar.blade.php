@@ -15,7 +15,7 @@
     <li class="nav-item">
 
       <a href="{{ route('dashboard.index') }}" class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('/') ? "
-        bg-white drop-shadow-xl text-fontColor" : "" }}">
+        bg-white drop-shadow-shadowAdi text-fontColor" : "" }}">
         <span class="material-symbols-rounded">
           grid_view
         </span>
@@ -25,7 +25,7 @@
       </a>
     </li>
     <a href="{{route('dashboard.profile')  }}"
-      class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('profile*') ? " bg-white drop-shadow-xl
+      class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('profile*') ? " bg-white drop-shadow-shadowAdi
       text-fontColor" : "" }}">
       <span class="material-symbols-rounded">
         person
@@ -37,8 +37,8 @@
     </li>
     <li>
       <a href="{{route('dashboard.attendances')  }}"
-        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('attendances') ? " bg-white drop-shadow-xl
-        text-fontColor" : "" }}">
+        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('attendances') ? " bg-white
+        drop-shadow-shadowAdi text-fontColor" : "" }}">
         <span class="material-symbols-rounded">
           touch_app
         </span>
@@ -72,8 +72,8 @@
   <ul class="nav px-2 mt-3 nav-pills flex-column mb-auto text-sm font-semibold">
     <li class="nav-item">
       <a href="{{ route('dashboard.admin') }}"
-        class="nav-link link-dark gap-x-10 flex flex-row{{ Request::is('dashboard-admin') ? " bg-white drop-shadow-xl
-        text-fontColor" : "" }}">
+        class="nav-link link-dark gap-x-10 flex flex-row{{ Request::is('dashboard-admin') ? " bg-white
+        drop-shadow-shadowAdi text-fontColor" : "" }}">
         <span class="material-symbols-rounded">
           grid_view
         </span>
@@ -81,7 +81,7 @@
       </a>
     </li>
     <a href=" {{ route('dashboard.student') }}"
-      class="nav-link link-dark gap-x-10 flex flex-row{{ Request::is('student*') ? " bg-white drop-shadow-xl
+      class="nav-link link-dark gap-x-10 flex flex-row{{ Request::is('student*') ? " bg-white drop-shadow-shadowAdi
       text-fontColor" : "" }}">
       <span class="material-symbols-rounded">
         person
@@ -91,7 +91,7 @@
     </li>
     <li>
       <a href="{{ route('dashboard.teacher') }}"
-        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('teacher*') ? " bg-white drop-shadow-xl
+        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('teacher*') ? " bg-white drop-shadow-shadowAdi
         text-fontColor" : "" }}">
         <span class="material-symbols-rounded">
           person

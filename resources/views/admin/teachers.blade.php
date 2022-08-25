@@ -4,7 +4,7 @@
 <div class="wrapper py-3 px-5 w-full h-full bg-backgroundColour">
     <div class="header-text text-black w-full bg-semiwhite p-3 rounded-lg">
         <h1 class="text-xl font-bold">Data Guru</h1>
-        <a href="{{ route('dashboard.export.teacher.excel') }}">Export to excel</a>
+        {{-- <a href="{{ route('dashboard.export.teacher.excel') }}">Export to excel</a> --}}
         <form action="{{ route('dashboard.import.teacher.excel') }}" enctype="multipart/form-data" method="POST"
             class="flex flex-row">
             @csrf
@@ -13,6 +13,11 @@
             <div class="button w-full text-center">
                 <button type="submit"
                     class="bg-gradient-to-r from-infoBlueLight to-infoBlueDark p-2 rounded-lg w-1/3 text-sm font-bold text-semiwhite">Import</button>
+                <button
+                    class="bg-gradient-to-r from-infoBlueLight to-infoBlueDark p-2 rounded-lg w-1/3 text-sm font-bold text-semiwhite">
+                    <a href="{{ route('dashboard.export.teacher.excel') }}" class="p-3 px-4">Export
+                        to excel</a>
+                </button>
             </div>
         </form>
     </div>
