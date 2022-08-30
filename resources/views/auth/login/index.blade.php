@@ -1,7 +1,7 @@
 @extends('layouts.auth')
 
 @section('container')
-<div class="content-center flex flex-row w-screen ">
+<div class="content-center flex flex-row w-screen min-h-screen ">
     <div class="row grid justify-items-center w-2/4 g-lg-5 py-5 px-4 bg-white">
         @if (session()->has('success'))
         <div class="alert alert-success w-2/3 alert-dismissible fade show" role="alert">
@@ -70,12 +70,12 @@
         </div>
     </div>
     <div
-        class="illustration-section hidden md:flex md:flex-col h-screen right-0 w-full bg-gradient-to-r from-lightPurple to-purpleDark">
+        class="illustration-section hidden md:flex md:flex-col h-full right-0 w-full bg-gradient-to-r from-lightPurple to-purpleDark">
         <div class="siabsen text-end m-8 text-white font-semibold text-2xl">
             <h1>siAbsen</h1>
         </div>
         <div class="image grid place-items-center">
-            <img class="w-1/2 " src="{{asset(" ../../../../login-ilustration.png")}}">
+            <img class="w-1/2 " src="{{ asset(" ../../../../login-ilustration.png") }}">
         </div>
         <div class="slogan text-center text-white font-semibold text-2xl">
             <p>"Improve Your Alpha"</p>

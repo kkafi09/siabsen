@@ -19,7 +19,7 @@ class DashboardController extends Controller
 
         $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->where('role', auth()->user()->role)->where('status', 'masuk')->take(100);
         $jumlahKehadiran = $kehadiran::where('role', auth()->user()->role)->select('status');
-        $status = Kehadiran::select('status');
+        $status = Kehadiran::where('name', auth()->user()->name)->select('status');
 
         // dd($jumlahKehadiran->get());
 
@@ -70,6 +70,6 @@ class DashboardController extends Controller
 
         Kehadiran::create($storedData);
 
-        return redirect()->route('dashboard.attendances')->with('success', "Berhasil absen");
+        return redirect()->route('dashboard.attendances')->with('success');
     }
 }
