@@ -17,6 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('nis')->nullable();
+
+            $table->integer('nis');
             $table->string('email')->unique();
             $table->enum('role', ['admin', 'guru', 'siswa'])->default('siswa');
             $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
