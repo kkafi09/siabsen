@@ -1,5 +1,5 @@
 import "./bootstrap";
-
+// const Swal = require("sweetalert2");
 const arr = [
     document.querySelector(".hamburger-button"),
     document.querySelector(".closer-button"),

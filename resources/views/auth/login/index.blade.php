@@ -10,10 +10,7 @@
         </div>
         @endif
         @if (session()->has('error'))
-        <div class="alert  w-2/3 alert-danger alert-dismissible fade show" role="alert">
-            {{ session('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+        <div class="btn " id="sweet-danger">Hello World</div>
         @endif
         <div class="py-5 flex pr-10 flex-col gap-y-12 justify-items-center h-fit w-screen md:w-full">
             <h1 class="siAbsen text absolute top-5 text-fontColor font-semibold text-2xl md:hidden">siAbsen</h1>
@@ -47,9 +44,6 @@
                         id="password" placeholder="password">
                     <label for="password">Password</label>
                     @error('password')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>

@@ -53,31 +53,12 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
   </script>
   <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyCqzeqMesbDfI4x_qED9I-kIxR6GUSyl0Y",
-      authDomain: "siabsen-eccab.firebaseapp.com",
-      projectId: "siabsen-eccab",
-      storageBucket: "siabsen-eccab.appspot.com",
-      messagingSenderId: "784190000743",
-      appId: "1:784190000743:web:4e51fc646d9fba71314ec2",
-      measurementId: "G-NW4RM3VWES"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
   </script>
   <script src="https://kit.fontawesome.com/b8dbbcbd36.js" crossorigin="anonymous"></script>
   @vite("resources/js/app.js")
   @vite("resources/js/admin.js")
+  @vite("resources/js/swal.mjs")
+
 
 </body>
 
