@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Attendance;
 use App\Models\Kehadiran;
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,6 +27,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => "Admin SIAKAD",
+            'nis' => 1232132,
             'role' => "admin",
             'kelas' => "Admin Siakad",
             'email' => "admin@gmail.com",
@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => "Guru SIAKAD",
+            'nis' => 213234234,
             'role' => "guru",
             'kelas' => "Guru X RPL 1",
             'email' => "guru@gmail.com",
@@ -44,6 +45,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => "Siswa SIAKAD",
+            'nis' => 1231242342,
             'kelas' => "X RPL 6",
             'email' => "siswa@gmail.com",
             'password' => bcrypt("siswa123")

@@ -12,6 +12,6 @@ class TeacherExport implements FromCollection
      */
     public function collection()
     {
-        return User::where('role', 'guru')->select('name', 'kelas', 'email')->get();
+        return User::where('role', 'guru')->select('name', 'nis', 'email', 'jenis_kelamin', 'kelas', 'email')->get();
     }
 }

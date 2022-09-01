@@ -12,7 +12,6 @@ class DashboardTeacherController extends Controller
     public function index(){
         return view('teachers.index', [
             'title' => "Dashboard",
-            'active' => "dashboard"
         ]);
     }
 
@@ -21,7 +20,6 @@ class DashboardTeacherController extends Controller
 
         return view('teachers.profil', [
             'title' => "Profil",
-            'active' => "profil-guru",
             'profile' => $profil_guru
         ]);
     }
@@ -29,9 +27,9 @@ class DashboardTeacherController extends Controller
     public function attendances(Kehadiran $kehadiran){
         $search = $kehadiran->where('created_at', '=', Carbon::now())
                             ->where('id', '=', auth()->user()->id);
+
         return view('students.attendances', [
             'title' => "Attendances",
-            'active' => "kehadiran-guru",
             'search' => $search->get()
         ]);
     }
