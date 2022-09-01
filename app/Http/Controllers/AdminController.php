@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Kehadiran;
 use App\Models\User;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
@@ -40,9 +39,5 @@ class AdminController extends Controller
             'title' => "Edit Teachers",
             'teachers' => $teachers
         ]);
-    }
-
-    public function studentExport()
-    {
     }
 }

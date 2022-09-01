@@ -12,6 +12,6 @@ class StudentExport implements FromCollection
      */
     public function collection()
     {
-        return User::where('role', 'siswa')->select('name', 'kelas', 'email')->get();
+        return User::where('role', 'siswa')->select('name', 'nis', 'email', 'jenis_kelamin', 'kelas', 'email')->get();
     }
 }
