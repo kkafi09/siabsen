@@ -5,8 +5,6 @@ use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\UpdatePasswordController;
-use App\Http\Controllers\UpdateProfileInformationController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -29,8 +27,8 @@ Route::post('/register', [RegisterController::class, "store"]);
 
 Route::group(['middleware' => ['auth', 'checkrole:admin']], function () {
     Route::get('/dashboard-admin', [AdminController::class, "index"])->name('dashboard.admin');
-    Route::get("/{user:email}/edit", [UpdateProfileInformationController::class, "index"])->name('dashboard.edit');
-    Route::put("/update/{user:email}", [UpdateProfileInformationController::class, "update"])->name('dashboard.update');
+    Route::get("/{user:email}/edit", [UserController::class, "editProfile"])->name('dashboard.edit');
+    Route::put("/update/{user:email}", [UpdateProfileInformationController::class, "updateProfile"])->name('dashboard.update');
     Route::delete("/delete/{user:email}", [UserController::class, "destroy"])->name("dashboard.delete");
 
     Route::prefix('student')->group(function () {
@@ -55,10 +53,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::prefix('profile')->group(function () {
         Route::get('/', [DashboardController::class, "profile"])->name('dashboard.profile');
 
-        Route::get("/edit", [UpdateProfileInformationController::class, "index"])->name('profile.edit');
-        Route::put("/update", [UpdateProfileInformationController::class, "update"])->name('profile.update');
+        Route::get("/edit", [UserController::class, "editProfile"])->name('profile.edit');
+        Route::put("/update", [UserController::class, "updateProfile"])->name('profile.update');
 
-        Route::get("/edit-password", [UpdatePasswordController::class, "index"])->name('password.edit');
-        Route::put("/update-password", [UpdatePasswordController::class, "update"])->name('password.update');
+        Route::get("/edit-password", [UserController::class, "editPassword"])->name('password.edit');
+        Route::put("/update-password", [UserController::class, "updatePassword"])->name('password.update');
     });
 });

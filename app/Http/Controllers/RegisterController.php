@@ -21,7 +21,7 @@ class RegisterController extends Controller
             'password'=>'required|min:5|max:255'
         ]);
 
-        $validatedData['kelas'] = $request->get('kelas');
+        $validatedData['nis'] = rand(100000, 1000000);
         $validatedData['password'] = bcrypt($validatedData['password']);
 
         User::create($validatedData);

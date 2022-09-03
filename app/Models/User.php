@@ -47,4 +47,9 @@ class User extends Authenticatable
         $default = "mm";
         return "https://www.gravatar.com/avatar/" . md5(strtolower(trim($this->email))) . "?d=" . urlencode($default) . "&s=" . $size;
     }
+
+    public function kehadiran()
+    {
+        return $this->hasMany(Kehadiran::class);
+    }
 }
