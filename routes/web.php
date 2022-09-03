@@ -49,6 +49,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/', [DashboardController::class, "index"])->name('dashboard.index');
     Route::get('/attendances', [DashboardController::class, "attendances"])->name('dashboard.attendances');
     Route::post('/attend', [DashboardController::class, "store"]);
+    Route::get('/dataAttendances', [DashboardController::class, "dataAttendances"])->name('dashboard.dataAttendances');
 
     Route::prefix('profile')->group(function () {
         Route::get('/', [DashboardController::class, "profile"])->name('dashboard.profile');

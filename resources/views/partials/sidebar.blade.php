@@ -54,6 +54,20 @@
                         </p>
                     </a>
                 </li>
+                <li>
+                    <a href="{{ route('dashboard.dataAttendances') }}"
+                        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('dataAttendances')
+                            ? " bg-white
+                                drop-shadow-shadowAdi text-fontColor"
+                            : '' }}">
+                        <span class="material-symbols-rounded">
+                            touch_app
+                        </span>
+                        <p>
+                            Data Absensi
+                        </p>
+                    </a>
+                </li>
             </ul>
         @endif
         @if (Auth::user()->role === 'guru')
@@ -73,6 +87,20 @@
                     <a href="{{ route('dashboard.attendances') }}"
                         class="nav-link text-white  {{ Request::is('attendances') }}">
                         Kehadiran hari ini
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('dashboard.dataAttendances') }}"
+                        class="nav-link link-dark gap-x-10 flex flex-row  {{ Request::is('dataAttendances')
+                            ? " bg-white
+                                drop-shadow-shadowAdi text-fontColor"
+                            : '' }}">
+                        <span class="material-symbols-rounded">
+                            touch_app
+                        </span>
+                        <p>
+                            Data Absensi
+                        </p>
                     </a>
                 </li>
             </ul>
