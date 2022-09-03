@@ -16,7 +16,7 @@ class DashboardTeacherController extends Controller
     }
 
     public function profile(){
-        $profil_guru = User::where('id', auth()->user()->id)->first();
+        $profil_guru = auth()->user();
 
         return view('teachers.profil', [
             'title' => "Profil",
@@ -39,7 +39,7 @@ class DashboardTeacherController extends Controller
             'attendance'=>'required',
         ]);
 
-        $storedData['name'] = auth()->user()->name;
+        $storedData['user_id'] = auth()->user()->id;
         $storedData['kelas'] = auth()->user()->kelas;
 
         Kehadiran::create($storedData);

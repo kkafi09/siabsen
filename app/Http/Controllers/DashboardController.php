@@ -46,9 +46,7 @@ class DashboardController extends Controller
 
     public function attendances(Kehadiran $kehadiran)
     {
-        $search = $kehadiran->where('created_at', Carbon::now())
-            ->where('id', auth()->user()->id);
-
+        $search = $kehadiran->whereDate('created_at', Carbon::today())->where('user_id', auth()->user()->id);
         return view('dashboard.attendances', [
             'title' => "Attendances",
             'search' => $search->get()
@@ -61,10 +59,11 @@ class DashboardController extends Controller
             'attendance' => 'required',
         ]);
 
-        $storedData['name'] = auth()->user()->name;
+        $storedData['user_id'] = auth()->user()->id;
         $storedData['kelas'] = auth()->user()->kelas;
         $storedData['status'] = $request->input('attendance');
         $storedData['role'] = auth()->user()->role;
+        $storedData['start_time'] = Carbon::now();
 
         $kehadiran::create($storedData);
 
