@@ -20,7 +20,7 @@ class DashboardController extends Controller
         $kehadiranHariIni = $kehadiran::whereDate('created_at', Carbon::today())->where('role', auth()->user()->role)->where('status', 'masuk')->take(100);
         $jumlahKehadiran = $kehadiran::where('role', auth()->user()->role)->select('status');
         $status = Kehadiran::where('name', auth()->user()->name)->select('status');
-        $bgCol = "bg-gradient-to-r from-belumAbsenLight to-belumAbsenDark";
+        $bgCol = "from-belumAbsenLight to-belumAbsenDark";
         // dd($jumlahKehadiran->get());
 
         return view('dashboard.index', [

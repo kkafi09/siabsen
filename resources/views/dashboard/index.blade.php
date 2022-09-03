@@ -7,8 +7,10 @@
                 <div id='calendar' class="rounded-lg p-3 h-96 bg-white drop-shadow-shadowAdi">
                 </div>
             </div>
-            <div
-                class="card-waktu rounded-xl h-36 text-white w-full flex flex-row p-3 drop-shadow-shadowAdi bg-gradient-to-r from-lightPurple to-purpleDark">
+            @foreach ($status as $index)
+            <div class="card-waktu rounded-xl h-36 text-white w-full flex flex-row p-3 drop-shadow-shadowAdi bg-gradient-to-r {{ $index->status ='
+                masuk' ? 'from-masukLight to-masukDark' : $bgCol }}">
+                @endforeach
                 <div class="text w-2/3">
                     <p class=" text-md font-medium capitalize">Status presensi</p>
                     <p class="text-xs font-light"> Lakukan presensi untuk mengetahui kehadiranmu</p>
@@ -68,7 +70,7 @@
                                     <img src="https://github.com/mdo.png" alt="" class="rounded-lg w-16">
                                 </div>
                                 <div class="text capitalize col-span-2 grid content-center">
-                                    <p class="font-medium">{{ $index + 1 }}. {{ $hadir->name }}.</p>
+                                    <p class="font-medium">{{ $hadir->name }}.</p>
                                     <small>{{ $hadir->kelas }} ({{ $hadir->created_at->format('H:i:s') }})</small>
                                 </div>
                             </li>
