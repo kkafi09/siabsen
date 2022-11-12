@@ -69,11 +69,11 @@ class DashboardController extends Controller
 
     public function dataAttendances(Kehadiran $kehadiran)
     {
-        $dataAttend = $kehadiran::where('name', auth()->user()->name)->get();
+        $data = $kehadiran::where('user_id', auth()->user()->id)->get();
 
         return view('dashboard.dataAttendances', [
             'title' => "Data Absensi",
-            'attendances' => $dataAttend
+            'attendances' => $data
         ]);
     }
 }
