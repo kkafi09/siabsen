@@ -15,7 +15,7 @@
 
     {{-- Tailwind css --}}
     @vite('resources/css/app.css')
-    <title>SIAKAD | {{ $title }}</title>
+    <title>siAbsen | {{ $title }}</title>
 </head>
 
 <body class="overflow-x-hidden ">
