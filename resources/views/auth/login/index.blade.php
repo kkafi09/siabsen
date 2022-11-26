@@ -30,9 +30,7 @@
             <form class=" w-full" method="post" action="/login">
                 @csrf
                 <div class="form-floating mb-3">
-                    <input name="email" type="email"
-                        class="form-control bg-backgroundColour rounded-xl border-none @error('email') is-invalid @enderror"
-                        id="email" placeholder="Email" autofocus value="{{ old('email') }}">
+                    <input name="email" type="email" class="form-control bg-backgroundColour rounded-xl border-none @error('email') is-invalid @enderror" id="email" placeholder="Email" autofocus value="{{ old('email') }}">
                     <label for="email">Email</label>
                     @error('email')
                     <div class="invalid-feedback">
@@ -42,9 +40,7 @@
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input name="password" type="password"
-                        class="form-control my-12 bg-backgroundColour rounded-xl border-none @error('password') is-invalid @enderror"
-                        id="password" placeholder="password">
+                    <input name="password" type="password" class="form-control my-12 bg-backgroundColour rounded-xl border-none @error('password') is-invalid @enderror" id="password" placeholder="password">
                     <label for="password">Password</label>
                     @error('password')
                     <div class="invalid-feedback">
@@ -55,8 +51,7 @@
                     </div>
                     @enderror
                 </div>
-                <button class="w-100 btn bg-gradient-to-r rounded-lg from-lightPurple to-purpleDark text-white"
-                    type="submit">Masuk</button>
+                <button class="w-100 btn bg-gradient-to-r rounded-lg from-lightPurple to-purpleDark text-white" type="submit">Masuk</button>
                 <small class="d-block text-center text-gray mt-3 font-medium">
                     Tidak bisa masuk? <a href="/register" class="text-fontColor">Hubungi kami</a>
                 </small>
@@ -64,18 +59,17 @@
 
             <div class="credits font-sans w-full h-fit relative top-32 text-gray">
                 <p class="flex w-full flex-row bottom-12 gap-x-2 absolute justify-center font-semibold text-xs">
-                    Desain ilustrasi oleh <img class="w-1/6 " src="{{asset(" ../../../../creditsFreepik.png")}}">
+                    Desain ilustrasi oleh <img class="w-1/6 " src="{{ asset('/image/credit-freepik.png') }}">
                 </p>
             </div>
         </div>
     </div>
-    <div
-        class="illustration-section hidden md:flex md:flex-col h-full right-0 w-full bg-gradient-to-r from-lightPurple to-purpleDark">
+    <div class="illustration-section hidden md:flex md:flex-col h-full right-0 w-full bg-gradient-to-r from-lightPurple to-purpleDark">
         <div class="siabsen text-end m-8 text-white font-semibold text-2xl">
             <h1>siAbsen</h1>
         </div>
         <div class="image grid place-items-center">
-            <img class="w-1/2 " src="{{ asset(" ../../../../login-ilustration.png") }}">
+            <img class="w-1/2 " src="{{ asset('/image/login-illustration.png') }}">
         </div>
         <div class="slogan text-center text-white font-semibold text-2xl">
             <p>"Improve Your Alpha"</p>
