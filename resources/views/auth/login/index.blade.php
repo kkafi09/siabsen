@@ -17,24 +17,24 @@
             @endif
             <div class="py-6 px-4 flex flex-col gap-y-12 justify-items-center h-fit w-screen md:w-full">
                 <div class="title flex flex-col gap-y-2 w-full">
-                    <div class="h1-bigtitle flex flex-col font-bold text-3xl text-gray gap-y-1">
+                    <div class="h1-bigtitle flex flex-col font-bold text-2xl md:text-3xl text-gray gap-y-1">
                         <h1 class="font-sans">Selamat Pagi!</h1>
                         <h1 class="">Masuk ke siAbsen</h1>
                     </div>
-                    <p class="text-md font-medium text-left text-gray opacity-80 max-w-sm">Pelaporan juga pengelolaan data
+                    <p class="sm:text-sm text-md font-medium text-left text-gray opacity-80 max-w-sm">Pelaporan juga pengelolaan data
                         akademik
                         dan data lainnya
                     </p>
                 </div>
 
-                <form class="max-w-6/12 w-full" method="post" action="/login">
+                <form class="w-full" method="post" action="/login">
                     @csrf
-                    <div class="mb-3 max-w-md">
+                    <div class="mb-3 max-sm:max-w-md md:max-w-lg pr-5 md:pr-0">
                         <label for="email" class="label">
                             <span class="label-text">Email</span>
                         </label>
                         <input name="email" type="email"
-                            class="input input-md w-full bg-backgroundColour border-none @error('email') is-invalid @enderror"
+                            class="input input-md w-full bg-backgroundColour  border-none @error('email') is-invalid @enderror"
                             id="email" placeholder="Email" autofocus value="{{ old('email') }}">
                         @error('email')
                             <div class="invalid-feedback">
@@ -43,12 +43,12 @@
                         @enderror
                     </div>
 
-                    <div class="mb-3 max-w-md">
+                    <div class="mb-3 max-sm:max-w-md md:max-w-lg pr-5 md:pr-0">
                         <label for="password" class="label">
                             <span class="label-text">Password</span>
                         </label>
                         <input name="password" type="password"
-                            class="input input-md w-full bg-backgroundColour border-none @error('password') is-invalid @enderror"
+                            class="input input-md w-full bg-backgroundColour  border-none @error('password') is-invalid @enderror"
                             id="password" placeholder="Password">
                         @error('password')
                             <div class="invalid-feedback">
@@ -60,7 +60,7 @@
                         @enderror
                     </div>
 
-                    <div class=" max-w-md my-6">
+                    <div class="my-6 max-sm:max-w-md md:max-w-lg pr-5 md:pr-0">
                         <button
                             class="btn btn-block block bg-gradient-to-r rounded-lg from-lightPurple to-purpleDark text-white"
                             type="submit">Masuk</button>
@@ -87,7 +87,7 @@
                 <h1>siAbsen</h1>
             </div>
             <div class="image grid place-items-center">
-                <img class="w-4/6 " src="{{ asset('/image/login-illustration.png') }}">
+                <img class="w-3/4 lg:w-4/6 " src="{{ asset('/image/login-illustration.png') }}">
             </div>
             <div class="slogan text-center text-white font-semibold text-2xl">
                 <p class="italic">" Improve Your Alpha "</p>

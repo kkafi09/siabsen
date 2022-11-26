@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg text-white  bg-navbarColour drop-shadow-md">
+{{-- <nav class="navbar navbar-expand-lg text-white  bg-navbarColour drop-shadow-md">
   <div class="container">
     <div class="hamburger xl:hidden">
       <div class="burger">
@@ -47,4 +47,48 @@
       </ul>
     </div>
   </div>
-</nav>
+</nav> --}}
+<div class="navbar bg-base-100">
+    <div class="navbar-start">
+        <div class="dropdown">
+            <label class="btn btn-ghost lg:hidden" for="my-drawer">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+                </svg>
+            </label>
+        </div>
+    </div>
+    <div class="navbar-end">
+        <div class="flex-none">
+            <div class="dropdown dropdown-end">
+                <div class="flex items-center">
+                    <div class="mx-2">
+                        <p class="uppercase text-sm font-bold">{{ auth()->user()->name }}</p>
+                        <p class="uppercase text-xs font-semibold"> {{ auth()->user()->kelas }}</p>
+                    </div>
+                    <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                        <div class="w-10 rounded-full">
+                            <img src="https://placeimg.com/80/80/people" />
+                        </div>
+                    </label>
+                </div>
+                <ul tabindex="0"
+                    class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <li><a class="dropdown-item" href="{{ route('dashboard.profile') }}">Profil</a></li>
+                    <li><a class="dropdown-item" href="{{ route('password.edit') }}">Ubah Password</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profile.edit') }}">Update Profile</a></li>
+                    <li>
+                        <div class="divider my-0"></div>
+                    </li>
+                    <li>
+                        <form action="/logout" method="post">
+                            @csrf
+                            <button class="dropdown-item">Sign out</button>
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

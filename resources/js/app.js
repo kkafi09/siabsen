@@ -1,18 +1,19 @@
 import "./bootstrap";
 
 const arr = [
-    document.querySelector(".hamburger-button"),
-    document.querySelector(".closer-button"),
+    document.querySelector("#my-drawer"),
+    // document.querySelector(".closer-button"),
 ];
 
 arr.forEach((element) => {
     element.addEventListener("click", () => {
-        document
-            .querySelector(".navbar-toggler")
-            .classList.toggle("-translate-x-full");
-        document.body.classList.toggle("overflow-hidden");
-        document.querySelector(".black-container").classList.toggle("hidden");
-        document.querySelector(".hidden-button").classList.toggle("hidden");
+        // document
+        //     .querySelector(".navbar-toggler")
+        //     .classList.toggle("-translate-x-full");
+        // document.body.classList.toggle("overflow-hidden");
+        // document.querySelector(".black-container").classList.toggle("hidden");
+        // document.querySelector(".hidden-button").classList.toggle("hidden");
+        document.querySelector(".drawer").classList.toggle("hidden");
     });
 });
 document.addEventListener("DOMContentLoaded", function () {
